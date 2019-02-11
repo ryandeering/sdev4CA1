@@ -1,0 +1,6 @@
+Notes:
+
+app/models/users/ 
+-- Will need a default user class here. best to set up authorisation and whatnot early so we can design around it.
+afaik, two types of users. Admin and typical employee. Look to play framework login lab on how to implement.
+
