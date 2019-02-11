@@ -1,8 +1,8 @@
-name := """play-java-starter-example"""
+name := """sdev4CA1"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.12.8"
 
@@ -12,7 +12,7 @@ javacOptions ++= Seq(
   "-Xlint:unchecked",
   "-Xlint:deprecation",
   "-Werror"
-)s
+)
 
 crossScalaVersions := Seq("2.11.12", "2.12.7")
 

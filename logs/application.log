@@ -1,0 +1,13 @@
+2019-02-11 20:35:39,837 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized at jdbc:h2:file:./data/DB
+2019-02-11 20:35:39,842 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2019-02-11 20:35:40,443 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - ApplicationTimer demo: Starting application at 2019-02-11T20:35:40.437Z
+2019-02-11 20:35:40,637 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2019-02-11 20:35:40,849 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev) (no global state)
+2019-02-11 20:35:40,855 [INFO] from application in application-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Stopping application at 2019-02-11T20:35:40.855Z after 0s.
+2019-02-11 20:35:40,859 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.

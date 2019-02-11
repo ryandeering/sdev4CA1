@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/College_Projects/sdev4CA1/app/views/main.scala.html:27:86: value onsale is not a member of controllers.ReverseHomeController[0m
+[0m[[0m[31merror[0m] [0m[0m		    <li @if(pagename == "On Sale"){class="active"}><a href="@routes.HomeController.onsale()">Products</a></li>[0m
+[0m[[0m[31merror[0m] [0m[0m		                                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/College_Projects/sdev4CA1/app/views/main.scala.html:28:87: value about is not a member of controllers.ReverseHomeController[0m
+[0m[[0m[31merror[0m] [0m[0m		    <li @if(pagename == "About Us"){class="active"}><a href="@routes.HomeController.about()">About us</a></li>[0m
+[0m[[0m[31merror[0m] [0m[0m		                                                                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
