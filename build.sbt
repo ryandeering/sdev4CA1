@@ -2,7 +2,7 @@ name := """sdev4CA1"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 scalaVersion := "2.12.8"
 
@@ -27,6 +27,5 @@ libraryDependencies += "org.awaitility" % "awaitility" % "3.1.3" % Test
 
 // Make verbose tests
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
-libraryDependencies += "com.h2database" % "h2" % "1.4.197"
 libraryDependencies ++= Seq(evolutions, jdbc)
-
+libraryDependencies += "org.imgscalr" % "imgscalr-lib" % "4.2"

@@ -40,7 +40,13 @@ Seq[Any](format.raw/*6.1*/("""
     """),format.raw/*17.8*/("""
     """),_display_(/*18.6*/welcome(message, style = "java")),format.raw/*18.38*/("""
 
-""")))}),format.raw/*20.2*/("""
+
+
+
+
+""")))}),format.raw/*24.2*/("""
+
+
 """))
       }
     }
@@ -57,11 +63,11 @@ Seq[Any](format.raw/*6.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 11 19:20:01 GMT 2019
-                  SOURCE: /home/ryan/Documents/College_Projects/sdev4CA1/app/views/index.scala.html
-                  HASH: 9040cdc6391df1f5c9d9a05a763073d6fd21d0f1
-                  MATRIX: 1037->95|1148->113|1176->308|1204->310|1236->333|1276->335|1309->464|1341->470|1394->502|1427->505
-                  LINES: 31->5|36->6|37->11|38->12|38->12|38->12|40->17|41->18|41->18|43->20
+                  DATE: Tue Feb 12 14:59:02 GMT 2019
+                  SOURCE: /home/wdd/Desktop/sdev4CA1/app/views/index.scala.html
+                  HASH: 657481f69db13ef12c2ab7dbbb497505d0437e76
+                  MATRIX: 1037->95|1148->113|1176->308|1204->310|1236->333|1276->335|1309->464|1341->470|1394->502|1431->509
+                  LINES: 31->5|36->6|37->11|38->12|38->12|38->12|40->17|41->18|41->18|47->24
                   -- GENERATED --
               */
           

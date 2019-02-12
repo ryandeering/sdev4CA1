@@ -1,0 +1,29 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/wdd/Desktop/sdev4CA1/target/scala-2.12/sdev4ca1_2.12-1.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Module.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/Module.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	services/Counter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/services/Counter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers/CountController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/controllers/CountController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/conf/logback.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers/HomeController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/controllers/HomeController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models/employees/Employee.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	routes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/conf/routes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	filters/ExampleFilter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/filters/ExampleFilter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	services/AtomicCounter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/services/AtomicCounter.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	services/ApplicationTimer.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/services/ApplicationTimer.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/conf/application.conf[0m
+[0m[[0m[0mdebug[0m] [0m[0m	controllers/AsyncController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/controllers/AsyncController.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models/employees/Manager.java[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/wdd/Desktop/sdev4CA1/app/models/employees/Manager.java[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m

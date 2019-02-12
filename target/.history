@@ -1,3 +1,11 @@
 run
 h2-browser
 run
+clean
+compile
+clean
+run
+h2-browser
+run
+dist
+exit

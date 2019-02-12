@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="web-plugin"
 		confs="compile, runtime, test, provided, optional, web-assets, web-assets-test, web-plugin, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190211203538"/>
+		date="20190212153642"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
