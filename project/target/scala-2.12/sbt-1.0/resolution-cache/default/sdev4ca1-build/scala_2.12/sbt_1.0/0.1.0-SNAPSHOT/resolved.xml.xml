@@ -4,7 +4,7 @@
 		module="sdev4ca1-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20190212140456"
+		publication="20190212161755"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
@@ -36,7 +36,7 @@
 		<dependency org="org.scala-sbt" name="sbt" rev="1.2.8" conf="provided->default(compile)"/>
 		<dependency org="com.typesafe.play" name="sbt-plugin" rev="2.7.0" conf="compile->default(compile)" e:sbtVersion="1.0" e:scalaVersion="2.12"/>
 		<dependency org="com.typesafe.sbt" name="sbt-play-enhancer" rev="1.2.2" conf="compile->default(compile)" e:sbtVersion="1.0" e:scalaVersion="2.12"/>
-		<dependency org="com.typesafe.sbt" name="sbt-play-ebean" rev="4.0.6" conf="compile->default(compile)" e:sbtVersion="1.0" e:scalaVersion="2.12"/>
+		<dependency org="com.typesafe.sbt" name="sbt-play-ebean" rev="4.1.0" conf="compile->default(compile)" e:sbtVersion="1.0" e:scalaVersion="2.12"/>
 		<override org="org.scala-sbt" module="scripted-plugin_2.12" matcher="exact" rev="1.2.8"/>
 	</dependencies>
 </ivy-module>

@@ -1,42 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:4:1: package javax.persistence does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport javax.persistence.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:5:1: package io.ebean does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport io.ebean.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:19:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Model[0m
-[0m[[0m[31merror[0m] [0m[0mpublic class Employee extends Model {[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:9:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Entity[0m
-[0m[[0m[31merror[0m] [0m[0m@Entity[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:11:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Table[0m
-[0m[[0m[31merror[0m] [0m[0m@Table(name = "employee")[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:13:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Inheritance[0m
-[0m[[0m[31merror[0m] [0m[0m@Inheritance(strategy = InheritanceType.SINGLE_TABLE)[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:15:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class DiscriminatorColumn[0m
-[0m[[0m[31merror[0m] [0m[0m@DiscriminatorColumn(name = "role")[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:17:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class DiscriminatorValue[0m
-[0m[[0m[31merror[0m] [0m[0m@DiscriminatorValue("employee")[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:32:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Finder[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class models.employees.Employee[0m
-[0m[[0m[31merror[0m] [0m[0m    public static final Finder<Long, Employee> find = new Finder<>(Employee.class);[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Manager.java:3:1: package javax.persistence does not exist[0m
-[0m[[0m[31merror[0m] [0m[0mimport javax.persistence.*;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Manager.java:5:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class Entity[0m
-[0m[[0m[31merror[0m] [0m[0m@Entity[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Manager.java:7:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol: class DiscriminatorValue[0m
-[0m[[0m[31merror[0m] [0m[0m@DiscriminatorValue("manager")[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:20:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Id[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class models.employees.Employee[0m
-[0m[[0m[31merror[0m] [0m[0m    @Id[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:32:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Finder[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class models.employees.Employee[0m
-[0m[[0m[31merror[0m] [0m[0m    public static final Finder<Long, Employee> find = new Finder<>(Employee.class);[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:39:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method findUnique()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: interface io.ebean.ExpressionList<models.employees.Employee>[0m
+[0m[[0m[31merror[0m] [0m[0m        return find.query().where().eq("email", email).eq("password", password).findUnique();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:46:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method findUnique()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: interface io.ebean.ExpressionList<models.employees.Employee>[0m
+[0m[[0m[31merror[0m] [0m[0m            return find.query().where().eq("email", id).findUnique();[0m
