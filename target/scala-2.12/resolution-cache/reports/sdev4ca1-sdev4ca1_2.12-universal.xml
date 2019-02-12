@@ -6,8 +6,8 @@
 		module="sdev4ca1_2.12"
 		revision="1.0-SNAPSHOT"
 		conf="universal"
-		confs="compile, runtime, test, provided, optional, web-assets, web-assets-test, web-plugin, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190212162134"/>
+		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
+		date="20190212200951"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
