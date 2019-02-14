@@ -1,8 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:39:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method findUnique()[0m
-[0m[[0m[31merror[0m] [0m[0m  location: interface io.ebean.ExpressionList<models.employees.Employee>[0m
-[0m[[0m[31merror[0m] [0m[0m        return find.query().where().eq("email", email).eq("password", password).findUnique();[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/sdev4CA1/app/models/employees/Employee.java:46:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method findUnique()[0m
-[0m[[0m[31merror[0m] [0m[0m  location: interface io.ebean.ExpressionList<models.employees.Employee>[0m
-[0m[[0m[31merror[0m] [0m[0m            return find.query().where().eq("email", id).findUnique();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/sdev4CA1/app/controllers/HomeController.java:48:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable addEmployee[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.HomeController[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(addEmployee.render());[0m

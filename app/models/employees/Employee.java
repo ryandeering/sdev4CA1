@@ -1,4 +1,4 @@
-package models.employees;
+package models;
 
 import java.util.*;
 import javax.persistence.*;
@@ -29,6 +29,13 @@ public class Employee extends Model {
     @Constraints.Required
     private String password;
 
+
+    @ManyToOne
+    private Department dep;
+
+
+
+
     public static final Finder<Long, Employee> find = new Finder<>(Employee.class);
 
     public static final List<Employee> findAll() {
@@ -56,6 +63,13 @@ public class Employee extends Model {
         this.name = name;
         this.password = password;
     }
+
+
+
+@ManyToOne
+	@JoinColumn(name = "iddepartment")
+	private Department department;
+    
 
     public String getEmail() {
         return email;

@@ -22,39 +22,30 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
-  /*
- * This template takes a single argument, a String containing a
- * message to display.
- */
-  def apply/*5.2*/(message: String):play.twirl.api.HtmlFormat.Appendable = {
+  /**/
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*6.1*/("""
-"""),format.raw/*11.4*/("""
-"""),_display_(/*12.2*/main("Welcome to Play")/*12.25*/ {_display_(Seq[Any](format.raw/*12.27*/("""
-
-    """),format.raw/*17.8*/("""
-    """),_display_(/*18.6*/welcome(message, style = "java")),format.raw/*18.38*/("""
-
-
-
-
-
-""")))}),format.raw/*24.2*/("""
-
+Seq[Any](_display_(/*1.2*/main("Index")/*1.15*/{_display_(Seq[Any](format.raw/*1.16*/("""
+"""),format.raw/*2.1*/("""<p>
+<a href=""""),_display_(/*3.11*/routes/*3.17*/.HomeController.addEmployee()),format.raw/*3.46*/("""">
+<button class = "btn btn-primary"> Add an Employee </button>
+</a>
+</p>
+""")))}),format.raw/*7.2*/("""
 
 """))
       }
     }
   }
 
-  def render(message:String): play.twirl.api.HtmlFormat.Appendable = apply(message)
+  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
 
-  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (message) => apply(message)
+  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
 
   def ref: this.type = this
 
@@ -63,11 +54,11 @@ Seq[Any](format.raw/*6.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 12 20:10:28 GMT 2019
+                  DATE: Thu Feb 14 10:53:44 GMT 2019
                   SOURCE: /home/ryan/Documents/sdev4CA1/app/views/index.scala.html
-                  HASH: 657481f69db13ef12c2ab7dbbb497505d0437e76
-                  MATRIX: 1037->95|1148->113|1176->308|1204->310|1236->333|1276->335|1309->464|1341->470|1394->502|1431->509
-                  LINES: 31->5|36->6|37->11|38->12|38->12|38->12|40->17|41->18|41->18|47->24
+                  HASH: a6b2c338a18a51065c3b3a0898dbc2b21460a5d5
+                  MATRIX: 1030->1|1051->14|1089->15|1116->16|1156->30|1170->36|1219->65|1323->140
+                  LINES: 33->1|33->1|33->1|34->2|35->3|35->3|35->3|39->7
                   -- GENERATED --
               */
           

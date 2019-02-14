@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryan/Documents/sdev4CA1/conf/routes
-// @DATE:Tue Feb 12 20:10:27 GMT 2019
+// @DATE:Thu Feb 14 10:53:23 GMT 2019
 
 package router
 
@@ -51,6 +51,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """count""", """controllers.CountController.count"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addEmployee""", """controllers.HomeController.addEmployee()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -130,6 +131,24 @@ class Routes(
     )
   )
 
+  // @LINE:16
+  private[this] lazy val controllers_HomeController_addEmployee4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addEmployee")))
+  )
+  private[this] lazy val controllers_HomeController_addEmployee4_invoker = createInvoker(
+    HomeController_0.addEmployee(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "addEmployee",
+      Nil,
+      "GET",
+      this.prefix + """addEmployee""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -155,6 +174,12 @@ class Routes(
     case controllers_Assets_versioned3_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned3_invoker.call(Assets_1.versioned(path, file))
+      }
+  
+    // @LINE:16
+    case controllers_HomeController_addEmployee4_route(params@_) =>
+      call { 
+        controllers_HomeController_addEmployee4_invoker.call(HomeController_0.addEmployee())
       }
   }
 }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryan/Documents/sdev4CA1/conf/routes
-// @DATE:Tue Feb 12 20:10:27 GMT 2019
+// @DATE:Thu Feb 14 10:53:23 GMT 2019
 
 import play.api.mvc.Call
 
@@ -32,6 +32,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:16
+    def addEmployee(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "addEmployee")
+    }
   
     // @LINE:6
     def index(): Call = {
