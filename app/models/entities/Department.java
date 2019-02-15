@@ -14,38 +14,40 @@ import models.employees.Employee;
 @SuppressWarnings("SerializableClass")
 
 public class Department {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="did_seq")
-    private int did;
-    private String depName;   
- 
- @OneToMany(mappedBy = "dep")
- public List<Employee> employees;
+    private Long id;
+
+    @Constraints.Required
+    private String name;
+
+    @OneToMany(mappedBy = "department", cascade = CascadeType.PERSIST)
+    private List<Employee> employees;
 
     
 
     public Department() {
     }
 
-    public Department(int did, String depName) {
-        this.did = did;
-        this.depName = depName;
+    public Department(Long id, String name, List<Employee> employees) {
+        this.id = id;
+        this.name = name;
     }
 
-    public int getDid() {
-        return did;
+    public long getId() {
+        return id;
     }
 
-    public void setDid(int did) {
-        this.did = did;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getDepName() {
-        return depName;
+    public String getName() {
+        return name;
     }
 
-    public void setDepName(String depName) {
-        this.depName = depName;
+    public void setName(String name) {
+        this.name = name;
     }
 
 

@@ -1,0 +1,1 @@
+fuser -k 8000/tcp (kills any process on port 8000, namely play!)

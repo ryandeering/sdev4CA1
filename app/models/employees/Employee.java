@@ -10,7 +10,7 @@ import models.entities.*;
 
 @Entity
 // specify mapped table name
-@Table(name = "employee")
+@Table(name = "EMPLOYEE")
 // map subclasses to a single table
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 // the discriminator column is used to define Employee type
@@ -33,7 +33,15 @@ public class Employee extends Model {
 
 
     @ManyToOne
-    private Department dep;
+    private Department department;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    private Address address;
+
+    @ManyToMany(cascade = CascadeType.ALL,mappedBy="employees")
+    public List<Project> projects;
+
+
 
     public static final Finder<Long, Employee> find = new Finder<>(Employee.class);
 
