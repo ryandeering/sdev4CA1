@@ -1,15 +1,123 @@
-2019-02-14 11:09:27,547 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] initialized at jdbc:h2:file:./data/DB
-2019-02-14 11:09:27,549 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
-2019-02-14 11:09:28,058 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2019-02-14T11:09:28.058Z
-2019-02-14 11:09:28,281 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-3 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-02-14 11:09:28,427 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-02-15 11:41:01,000 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-9 - Database [default] initialized at jdbc:h2:file:./data/DB
+2019-02-15 11:41:01,015 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
+2019-02-15 11:41:02,637 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-9 - ApplicationTimer demo: Starting application at 2019-02-15T11:41:02.636Z
+2019-02-15 11:41:03,538 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-9 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2019-02-15 11:41:03,986 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-9 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
     filters.ExampleFilter
 
-2019-02-14 11:09:28,432 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
-2019-02-14 11:20:44,696 [INFO] from play.core.server.AkkaHttpServer in pool-23-thread-6 - Stopping server...
-2019-02-14 11:20:44,768 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2019-02-14T11:20:44.768Z after 676s.
-2019-02-14 11:20:44,770 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2019-02-15 11:41:03,993 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-9 - Application started (Dev)
+2019-02-15 11:41:23,202 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
+
+! @7b07i71c7 - Internal server error, for (GET) [/loginSubmit?csrfToken=2c89e0bffc109a7d6e16a8d09406cb5c8c0a04f2-1550230868798-8e8805f8025f84e8a35712a2&email=hulkamaniac%40gmail.com&password=password] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[CompletionException: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
+	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
+	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.util.concurrent.CompletionException: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:593)
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:577)
+	at java.util.concurrent.CompletableFuture.uniApplyStage(CompletableFuture.java:617)
+	at java.util.concurrent.CompletableFuture.thenApplyAsync(CompletableFuture.java:1993)
+	at java.util.concurrent.CompletableFuture.thenApplyAsync(CompletableFuture.java:110)
+	at play.libs.streams.Accumulator$StrictAccumulator.lambda$map$0(Accumulator.java:362)
+	at java.util.function.Function.lambda$andThen$1(Function.java:88)
+	at java.util.function.Function.lambda$andThen$1(Function.java:88)
+	at play.libs.streams.Accumulator$StrictAccumulator$1.apply(Accumulator.java:403)
+	at play.libs.streams.Accumulator$StrictAccumulator$1.apply(Accumulator.java:400)
+	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
+	at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:207)
+	at play.core.server.AkkaHttpServer.$anonfun$runAction$4(AkkaHttpServer.scala:376)
+	at akka.http.scaladsl.util.FastFuture$.strictTransform$1(FastFuture.scala:41)
+	at akka.http.scaladsl.util.FastFuture$.$anonfun$transformWith$3(FastFuture.scala:51)
+	... 12 common frames omitted
+Caused by: java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at play.data.Form.callLegacyValidateMethod(Form.java:518)
+	at play.data.Form.bind(Form.java:553)
+	at play.data.Form.bindFromRequest(Form.java:280)
+	at controllers.LoginController.loginSubmit(LoginController.java:35)
+	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$12(Routes.scala:230)
+	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
+	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
+	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
+	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:658)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
+	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
+	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
+	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
+	at scala.concurrent.Future.map(Future.scala:292)
+	at scala.concurrent.Future.map$(Future.scala:292)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
+	at scala.concurrent.Future$.apply(Future.scala:658)
+	at play.core.j.JavaAction.apply(JavaAction.scala:138)
+	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:174)
+	at scala.util.Try$.apply(Try.scala:213)
+	at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:174)
+	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
+	at scala.Function1.$anonfun$andThen$1(Function1.scala:57)
+	at play.api.libs.streams.StrictAccumulator$$anon$1.apply(Accumulator.scala:218)
+	at play.api.libs.streams.StrictAccumulator$$anon$1.apply(Accumulator.scala:217)
+	... 21 common frames omitted
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at play.data.Form.callLegacyValidateMethod(Form.java:509)
+	... 61 common frames omitted
+Caused by: javax.persistence.PersistenceException: Inheritance type for discriminator value [1] was not found?
+	at io.ebeaninternal.server.deploy.InheritInfo.readType(InheritInfo.java:228)
+	at io.ebeaninternal.server.deploy.InheritInfo.readType(InheritInfo.java:214)
+	at io.ebeaninternal.server.query.SqlTreeNodeBean.load(SqlTreeNodeBean.java:232)
+	at io.ebeaninternal.server.query.CQuery.readNextBean(CQuery.java:444)
+	at io.ebeaninternal.server.query.CQuery.hasNext(CQuery.java:529)
+	at io.ebeaninternal.server.query.CQuery.readCollection(CQuery.java:560)
+	at io.ebeaninternal.server.query.CQueryEngine.findMany(CQueryEngine.java:359)
+	at io.ebeaninternal.server.query.DefaultOrmQueryEngine.findMany(DefaultOrmQueryEngine.java:126)
+	at io.ebeaninternal.server.core.OrmQueryRequest.findList(OrmQueryRequest.java:371)
+	at io.ebeaninternal.server.core.DefaultServer.findList(DefaultServer.java:1506)
+	at io.ebeaninternal.server.core.DefaultServer.findOne(DefaultServer.java:1218)
+	at io.ebeaninternal.server.core.DefaultServer.findUnique(DefaultServer.java:1184)
+	at io.ebeaninternal.server.querydefn.DefaultOrmQuery.findOne(DefaultOrmQuery.java:1260)
+	at io.ebeaninternal.server.querydefn.DefaultOrmQuery.findUnique(DefaultOrmQuery.java:1270)
+	at io.ebeaninternal.server.expression.DefaultExpressionList.findUnique(DefaultExpressionList.java:412)
+	at models.employees.Employee.authenticate(Employee.java:45)
+	at models.employees.Login.validate(Login.java:13)
+	... 66 common frames omitted

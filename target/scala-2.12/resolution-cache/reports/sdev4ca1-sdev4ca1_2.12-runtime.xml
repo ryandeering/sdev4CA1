@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20190212200951"/>
+		date="20190215094319"/>
 	<dependencies>
 		<module organisation="org.imgscalr" name="imgscalr-lib">
 			<revision name="4.2" status="release" pubdate="20120111195930" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.thebuzzmedia.com/software/imgscalr-java-image-scaling-library/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="87">

@@ -2,18 +2,30 @@ package controllers;
 
 import play.mvc.*;
 
+
+import play.api.Environment;
+import play.data.*;
+import play.db.ebean.Transactional;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.inject.Inject;
+
+
 import views.html.*;
 
 import org.imgscalr.*;
 
 import models.*;
+import models.employees.*;
 
 import java.util.*;
 
 import javax.inject.Inject;
 
 import play.data.*;
-import play.db.ebean.Transactional;
+import play.db.ebean.Transactional; //clean up imports later - Ryan
 
 
 
@@ -41,12 +53,12 @@ public HomeController (FormFactory f){
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render());
+        return ok(index.render(Employee.getEmployeeById(session().get("email"))));
     }
 
-    public Result addEmployee(){
-        return ok(addEmployee.render());
-    }
+   // public Result addEmployee(){
+    //    return ok(addEmployee.render());
+   // }
 
 
 

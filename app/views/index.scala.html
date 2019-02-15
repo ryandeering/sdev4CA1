@@ -1,8 +1,4 @@
-@main("Index"){
-<p>
-<a href="@routes.HomeController.addEmployee()">
-<button class = "btn btn-primary"> Add an Employee </button>
-</a>
-</p>
+@(user: models.employees.Employee)
+@("Home", user){
+    <h1>Meowdy.</h1>
 }
-

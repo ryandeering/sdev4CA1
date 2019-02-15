@@ -1,10 +1,12 @@
-package models;
+package models.employees;
 
 import java.util.*;
 import javax.persistence.*;
 import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
+
+import models.entities.*;
 
 @Entity
 // specify mapped table name
@@ -32,9 +34,6 @@ public class Employee extends Model {
 
     @ManyToOne
     private Department dep;
-
-
-
 
     public static final Finder<Long, Employee> find = new Finder<>(Employee.class);
 
@@ -64,12 +63,6 @@ public class Employee extends Model {
         this.password = password;
     }
 
-
-
-@ManyToOne
-	@JoinColumn(name = "iddepartment")
-	private Department department;
-    
 
     public String getEmail() {
         return email;
