@@ -123,3 +123,9 @@ INSERT INTO DEPARTMENT VALUES (1, Computing) [42122-197]
 	at org.h2.server.web.WebThread.process(WebThread.java:165)
 	at org.h2.server.web.WebThread.run(WebThread.java:90)
 	at java.lang.Thread.run(Thread.java:748)
+2019-02-15 12:01:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROW" not found; SQL statement:
+DELETE ROW WHERE DEP_ID =1 FROM EMPLOYEE [42102-197]
+2019-02-15 12:01:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROW" not found; SQL statement:
+DELETE ROW WHERE DEP_DID =1 FROM EMPLOYEE [42102-197]

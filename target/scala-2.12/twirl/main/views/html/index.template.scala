@@ -30,9 +30,9 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
       {
 
 
-Seq[Any](_display_(/*2.2*/("Home", user)),format.raw/*2.16*/("""{"""),format.raw/*2.17*/("""
+Seq[Any](_display_(/*2.2*/main("Home", user)/*2.20*/{_display_(Seq[Any](format.raw/*2.21*/("""
     """),format.raw/*3.5*/("""<h1>Meowdy.</h1>
-"""),format.raw/*4.1*/("""}"""))
+""")))}))
       }
     }
   }
@@ -48,11 +48,11 @@ Seq[Any](_display_(/*2.2*/("Home", user)),format.raw/*2.16*/("""{"""),format.raw
 
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 15 09:43:29 GMT 2019
+                  DATE: Fri Feb 15 12:07:19 GMT 2019
                   SOURCE: /home/ryan/Documents/sdev4CA1/app/views/index.scala.html
-                  HASH: f05f24b609bc689e3743d40bb158006a3c307b93
-                  MATRIX: 967->1|1094->36|1128->50|1156->51|1187->56|1230->73
-                  LINES: 28->1|33->2|33->2|33->2|34->3|35->4
+                  HASH: e91181c7d457b1e4cc4cb8670eaa2e2e36b393b6
+                  MATRIX: 967->1|1094->36|1120->54|1158->55|1189->60
+                  LINES: 28->1|33->2|33->2|33->2|34->3
                   -- GENERATED --
               */
           

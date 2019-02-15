@@ -1,8 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/sdev4CA1/app/models/employees/Employee.java:9:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Department[0m
-[0m[[0m[31merror[0m] [0m[0m  location: package models[0m
-[0m[[0m[31merror[0m] [0m[0mimport models.Department;[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/sdev4CA1/app/models/employees/Employee.java:36:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class Department[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class models.employees.Employee[0m
-[0m[[0m[31merror[0m] [0m[0m    private Department dep;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/sdev4CA1/app/models/employees/Employee.java:9:1: '.' expected[0m
+[0m[[0m[31merror[0m] [0m[0mimport models;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/sdev4CA1/app/models/employees/Employee.java:9:1: ';' expected[0m
+[0m[[0m[31merror[0m] [0m[0mimport models;[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ryan/Documents/sdev4CA1/app/models/employees/Employee.java:11:1: class, interface, or enum expected[0m
+[0m[[0m[31merror[0m] [0m[0m@Entity[0m

@@ -7,6 +7,7 @@ import javax.persistence.*;
 @DiscriminatorValue("manager")
 public class Manager extends Employee {
     public Manager(String email, String name, String password) {
+
         super(email, name, password);
     }
 }
