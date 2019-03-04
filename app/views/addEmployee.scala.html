@@ -1,0 +1,29 @@
+@(userForm : Form[models.employees.Employee],user:models.employees.User)
+@import helper._
+@import models.employees._
+
+@main("New Employees",user){
+    <p class="lead">Register</p>
+
+
+    @form(action=routes.HomeController.addEmployeeSubmit(), 'class -> "form-horizontal", 'role -> "form") {
+        @* CSRF attack prevention *@
+        @* This token, sent by the controller, will be used to authenticate the form submission *@
+        @CSRF.formField
+        @inputText(userForm("email"), '_label -> "email", 'class -> "form-control")
+        @inputText(userForm("name"), '_label -> "name", 'class -> "form-control")
+        @inputText(userForm("password"), '_label -> "password", 'class -> "form-control")
+
+            <!-- We use the bootstrap actions class for the buttons at the bottom:
+                1. The submit button for the form
+                2. A button that allows the user to cancel without adding an item
+            -->
+        <div class="actions">
+            <input type="submit" value="Add/Update item" class="btn btn-primary">
+            <a href="@routes.HomeController.employeesManager()">
+                <button type="button" class="btn btn-warning">Cancel</button>
+            </a>
+        </div>
+    } @* end of form *@
+} @* end of main *@
+

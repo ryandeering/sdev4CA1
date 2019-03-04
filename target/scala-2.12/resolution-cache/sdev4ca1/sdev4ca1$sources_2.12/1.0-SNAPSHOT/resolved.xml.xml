@@ -4,7 +4,7 @@
 		module="sdev4ca1$sources_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190215114133"
+		publication="20190304212616"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>
@@ -107,6 +107,10 @@
 		</dependency>
 		<dependency org="org.scala-sbt.ipcsocket" name="ipcsocket" rev="1.0.0" transitive="false" conf="compile->master(*),compile,runtime(*),runtime,compile(*),master;runtime->master(*),compile,runtime(*),runtime,compile(*),master;test->master(*),compile,runtime(*),runtime,compile(*),master">
 			<artifact name="ipcsocket" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.26" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master,master(*);runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master,master(*);test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master,master(*)">
+			<artifact name="slf4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="org.apache.maven" name="maven-settings-builder" rev="3.2.2" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
@@ -431,10 +435,6 @@
 		</dependency>
 		<dependency org="com.typesafe.play" name="sbt-routes-compiler_2.12" rev="2.6.20" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master" info.apiURL="https://www.playframework.com/documentation/2.6.20/api/scala/index.html">
 			<artifact name="sbt-routes-compiler_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
-			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.25" transitive="false" conf="compile->master(*),default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->master(*),default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->master(*),default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
-			<artifact name="slf4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.8.0" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">

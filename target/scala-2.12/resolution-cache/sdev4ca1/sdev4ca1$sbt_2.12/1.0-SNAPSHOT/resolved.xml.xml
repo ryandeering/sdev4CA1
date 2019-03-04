@@ -4,7 +4,7 @@
 		module="sdev4ca1$sbt_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190215114125"
+		publication="20190304212558"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -35,7 +35,6 @@
 		<dependency org="com.google.errorprone" name="error_prone_annotations" rev="2.0.18" conf="compile->default(compile)"/>
 		<dependency org="com.google.j2objc" name="j2objc-annotations" rev="1.1" conf="compile->default(compile)"/>
 		<dependency org="org.codehaus.mojo" name="animal-sniffer-annotations" rev="1.14" conf="compile->default(compile)"/>
-		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.25" conf="compile->default(compile)"/>
 		<dependency org="com.github.pathikrit" name="better-files_2.12" rev="2.17.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe" name="config" rev="1.3.3" conf="compile->default(compile)"/>
 		<dependency org="org.slf4j" name="slf4j-simple" rev="1.7.25" conf="compile->default(compile)"/>
@@ -156,6 +155,7 @@
 		<dependency org="io.ebean" name="persistence-api" rev="2.2.1" conf="compile->default(compile)"/>
 		<dependency org="io.ebean" name="ebean-annotation" rev="2.3" conf="compile->default(compile)"/>
 		<dependency org="org.avaje" name="avaje-datasource-api" rev="1.1" conf="compile->default(compile)"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.26" conf="compile->default(compile)"/>
 		<dependency org="org.avaje" name="avaje-datasource" rev="2.1.1" conf="compile->default(compile)"/>
 		<dependency org="org.avaje" name="avaje-classpath-scanner-api" rev="2.2" conf="compile->default(compile)"/>
 		<dependency org="org.avaje" name="avaje-classpath-scanner" rev="2.2.2" conf="compile->default(compile)"/>

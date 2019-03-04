@@ -4,7 +4,7 @@
 		module="sdev4ca1_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20190215094319"
+		publication="20190228111623"
 	>
 		<description>
 		sdev4CA1
@@ -58,5 +58,6 @@
 		<dependency org="com.typesafe.play" name="play-jdbc-evolutions_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-jdbc_2.12" rev="2.6.20" conf="compile->default(compile)"/>
 		<dependency org="org.imgscalr" name="imgscalr-lib" rev="4.2" conf="compile->default(compile)"/>
+		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

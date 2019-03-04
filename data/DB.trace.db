@@ -129,3 +129,83 @@ DELETE ROW WHERE DEP_ID =1 FROM EMPLOYEE [42102-197]
 2019-02-15 12:01:27 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLException: Table "ROW" not found; SQL statement:
 DELETE ROW WHERE DEP_DID =1 FROM EMPLOYEE [42102-197]
+2019-02-18 17:54:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO ADDRESS VALUES (1, '1 DB Avenue')
+INSERT[*] INTO EMPLOYEE VALUES ('admin', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1)"; SQL statement:
+INSERT INTO ADDRESS VALUES (1, '1 DB Avenue')
+INSERT INTO EMPLOYEE VALUES ('admin', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1) [42000-197]
+2019-02-18 17:54:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO ADDRESS VALUES (1, '1 DB Avenue')
+INSERT[*] INTO EMPLOYEE VALUES ('admin', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1)"; SQL statement:
+INSERT INTO ADDRESS VALUES (1, '1 DB Avenue')
+INSERT INTO EMPLOYEE VALUES ('admin', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1) [42000-197]
+2019-02-18 17:54:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO ADDRESS VALUES (1, '1 DB Avenue')
+INSERT[*] INTO EMPLOYEE VALUES ('admin', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1)"; SQL statement:
+INSERT INTO ADDRESS VALUES (1, '1 DB Avenue')
+INSERT INTO EMPLOYEE VALUES ('admin', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1) [42000-197]
+2019-02-18 17:56:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO DEPARTMENT(1[*],'Computing')
+INSERT INTO EMPLOYEE VALUES ('manager', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1)"; expected "identifier"; SQL statement:
+INSERT INTO DEPARTMENT(1,'Computing')
+INSERT INTO EMPLOYEE VALUES ('manager', 'hulkamaniac@gmail.com', 'Hulk Hogan', 'password', 1, 1) [42001-197]
+2019-02-18 17:56:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO DEPARTMENT(1[*],'Computing')"; expected "identifier"; SQL statement:
+INSERT INTO DEPARTMENT(1,'Computing') [42001-197]
+2019-02-18 17:56:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO DEPARTMENT(1[*],'Computing')"; expected "identifier"; SQL statement:
+INSERT INTO DEPARTMENT(1,'Computing') [42001-197]
+2019-02-18 17:56:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO DEPARTMENT(1[*],'Computing')"; expected "identifier"; SQL statement:
+INSERT INTO DEPARTMENT(1,'Computing') [42001-197]
+2019-03-04 22:02:06 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO ADDRESS (1[*], 'Colepark')"; expected "identifier"; SQL statement:
+INSERT INTO ADDRESS (1, 'Colepark') [42001-197]
+2019-03-04 22:02:06 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
+INSERT INTO USER VALUES('manager', 'admin@gmail.com', 'Hulk', 'Hogan', 'password', 1, 1) [42102-197]
+2019-03-04 22:02:49 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+INSERT INTO EMPLOYEE VALUES('manager', 'admin@gmail.com', 'Hulk', 'Hogan', 'password', 1, 1) [21002-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:306)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1022)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1009)
+	at org.h2.server.web.WebThread.process(WebThread.java:165)
+	at org.h2.server.web.WebThread.run(WebThread.java:90)
+	at java.lang.Thread.run(Thread.java:748)
+2019-03-04 23:26:31 jdbc[55]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-197]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:197)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:137)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:117)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:123)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:365)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:194)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:460)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:699)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:685)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 19 more

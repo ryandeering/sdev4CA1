@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[String,models.employees.Employee,Html,play.twirl.api.HtmlFormat.Appendable] {
+object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[String,models.employees.User,Html,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(pagename: String, user: models.employees.Employee)(content:Html):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(pagename: String, user: models.employees.User)(content:Html):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -101,9 +101,9 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(pagename:String,user:models.employees.Employee,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(pagename,user)(content)
+  def render(pagename:String,user:models.employees.User,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(pagename,user)(content)
 
-  def f:((String,models.employees.Employee) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (pagename,user) => (content) => apply(pagename,user)(content)
+  def f:((String,models.employees.User) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (pagename,user) => (content) => apply(pagename,user)(content)
 
   def ref: this.type = this
 
@@ -112,10 +112,10 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 15 14:38:41 GMT 2019
+                  DATE: Mon Mar 04 21:47:32 GMT 2019
                   SOURCE: /home/ryan/Documents/sdev4CA1/app/views/main.scala.html
-                  HASH: e85a75e5886a56d737859a256e53e655ae136a38
-                  MATRIX: 978->1|1137->67|1437->341|1451->347|1510->386|1563->411|1592->412|1621->413|1708->472|1737->473|1770->479|1807->488|1836->489|1865->490|1941->538|1970->539|2003->545|2043->557|2072->558|2101->559|2148->578|2177->579|2210->585|2249->596|2278->597|2307->598|2391->654|2420->655|2453->661|2492->672|2521->673|2550->674|2616->712|2645->713|2678->719|2715->728|2744->729|2773->730|2813->742|2842->743|2871->745|2920->767|2949->775|3215->1014|3246->1036|3285->1037|3331->1052|3369->1063|3384->1069|3428->1092|3482->1119|3516->1144|3555->1145|3601->1160|3639->1171|3654->1177|3698->1200|3756->1231|3791->1257|3830->1258|3876->1273|3914->1284|3929->1290|3973->1313|4520->1834|4548->1841|4582->1848
+                  HASH: 30cd393ce2ff5e213e995cac7b7343cef129a0d5
+                  MATRIX: 974->1|1129->63|1429->337|1443->343|1502->382|1555->407|1584->408|1613->409|1700->468|1729->469|1762->475|1799->484|1828->485|1857->486|1933->534|1962->535|1995->541|2035->553|2064->554|2093->555|2140->574|2169->575|2202->581|2241->592|2270->593|2299->594|2383->650|2412->651|2445->657|2484->668|2513->669|2542->670|2608->708|2637->709|2670->715|2707->724|2736->725|2765->726|2805->738|2834->739|2863->741|2912->763|2941->771|3207->1010|3238->1032|3277->1033|3323->1048|3361->1059|3376->1065|3420->1088|3474->1115|3508->1140|3547->1141|3593->1156|3631->1167|3646->1173|3690->1196|3748->1227|3783->1253|3822->1254|3868->1269|3906->1280|3921->1286|3965->1309|4512->1830|4540->1837|4574->1844
                   LINES: 28->1|33->2|39->8|39->8|39->8|41->10|41->10|41->10|41->10|41->10|42->11|42->11|42->11|42->11|42->11|42->11|43->12|43->12|43->12|43->12|43->12|43->12|44->13|44->13|44->13|44->13|44->13|44->13|45->14|45->14|45->14|45->14|45->14|45->14|46->15|46->15|46->15|46->15|46->15|46->15|47->16|48->17|48->17|57->26|57->26|57->26|57->26|57->26|57->26|57->26|58->27|58->27|58->27|58->27|58->27|58->27|58->27|59->28|59->28|59->28|59->28|59->28|59->28|59->28|74->43|74->43|75->44
                   -- GENERATED --
               */

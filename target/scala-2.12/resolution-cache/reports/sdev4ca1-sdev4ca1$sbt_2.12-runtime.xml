@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional"
-		date="20190215114125"/>
+		date="20190304212558"/>
 	<dependencies>
 		<module organisation="com.typesafe.sbt" name="sbt-play-ebean">
 			<revision name="4.0.6" status="release" pubdate="20171011200637" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/play-ebean" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="210">
@@ -1601,6 +1601,95 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.26" status="release" pubdate="20190218231602" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master, master(*)" position="50">
+				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="5294" time="0" location="/home/ryan/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.26.xml" searched="true" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.pom"/>
+				<caller organisation="com.github.cb372" name="scalacache-caffeine_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="org.webjars" name="webjars-locator-core" conf="default, compile, runtime, master" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.33"/>
+				<caller organisation="com.eed3si9n" name="gigahorse-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.0"/>
+				<caller organisation="com.typesafe" name="jse_2.12" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.3"/>
+				<caller organisation="io.apigee.trireme" name="trireme-kernel" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="1.7.25"/>
+				<caller organisation="sdev4ca1" name="sdev4ca1$sbt_2.12" conf="compile, runtime" rev="1.7.26" rev-constraint-default="1.7.26" rev-constraint-dynamic="1.7.26" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="com.github.cb372" name="scalacache-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="org.apache.logging.log4j" name="log4j-slf4j-impl" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="2.11.1"/>
+				<caller organisation="org.avaje" name="avaje-datasource-api" conf="compile, runtime" rev="1.7.12" rev-constraint-default="1.7.12" rev-constraint-dynamic="1.7.12" callerrev="1.1"/>
+				<caller organisation="io.apigee.trireme" name="trireme-core" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="com.spotify" name="docker-client" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="8.9.0"/>
+				<caller organisation="org.avaje" name="avaje-classpath-scanner" conf="compile, runtime" rev="[1.7,1.8)" rev-constraint-default="[1.7,1.8)" rev-constraint-dynamic="[1.7,1.8)" callerrev="2.2.2"/>
+				<caller organisation="io.apigee.trireme" name="trireme-node10src" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.1"/>
+				<caller organisation="io.methvin" name="directory-watcher" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.2"/>
+				<caller organisation="io.ebean" name="ebean" conf="default, compile, runtime, master" rev="[1.7.1,1.7.99)" rev-constraint-default="[1.7.1,1.7.99)" rev-constraint-dynamic="[1.7.1,1.7.99)" callerrev="10.4.4"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="[1.7,1.8)" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.7.26"/>
+				<caller organisation="org.avaje" name="avaje-classpath-scanner" conf="compile, runtime" rev="[1.7,1.8)" rev-constraint-default="[1.7,1.8)" rev-constraint-dynamic="[1.7,1.8)" callerrev="2.2.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.7.12" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.7.26"/>
+				<caller organisation="org.avaje" name="avaje-datasource-api" conf="compile, runtime" rev="1.7.12" rev-constraint-default="1.7.12" rev-constraint-dynamic="1.7.12" callerrev="1.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.7.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.7.26"/>
+				<caller organisation="io.apigee.trireme" name="trireme-core" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="io.apigee.trireme" name="trireme-kernel" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="io.apigee.trireme" name="trireme-node10src" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.7.7" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, master(*), default(compile)" position="-1">
+				<evicted-by rev="1.7.26"/>
+				<caller organisation="org.webjars" name="webjars-locator-core" conf="default, compile, runtime, master" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.33"/>
+				<caller organisation="com.github.cb372" name="scalacache-caffeine_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="com.spotify" name="docker-client" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="8.9.0"/>
+				<caller organisation="com.eed3si9n" name="gigahorse-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.0"/>
+				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="1.7.25"/>
+				<caller organisation="sdev4ca1" name="sdev4ca1$sbt_2.12" conf="compile, runtime" rev="1.7.26" rev-constraint-default="1.7.26" rev-constraint-dynamic="1.7.26" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="com.github.cb372" name="scalacache-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="org.apache.logging.log4j" name="log4j-slf4j-impl" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="2.11.1"/>
+				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.1"/>
+				<caller organisation="io.methvin" name="directory-watcher" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.7.22" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master, master(*), default(compile)" position="-1">
+				<evicted-by rev="1.7.26"/>
+				<caller organisation="com.github.cb372" name="scalacache-caffeine_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="io.apigee.trireme" name="trireme-core" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="com.spotify" name="docker-client" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="8.9.0"/>
+				<caller organisation="com.eed3si9n" name="gigahorse-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.0"/>
+				<caller organisation="com.typesafe" name="jse_2.12" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.3"/>
+				<caller organisation="io.apigee.trireme" name="trireme-kernel" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
+				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="1.7.25"/>
+				<caller organisation="sdev4ca1" name="sdev4ca1$sbt_2.12" conf="compile, runtime" rev="1.7.26" rev-constraint-default="1.7.26" rev-constraint-dynamic="1.7.26" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="com.github.cb372" name="scalacache-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="org.apache.logging.log4j" name="log4j-slf4j-impl" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="2.11.1"/>
+				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.1"/>
+				<caller organisation="io.methvin" name="directory-watcher" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.7.25" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="master(*), compile, runtime(*), master(compile), runtime, compile(*), master, default(compile)" position="-1">
+				<evicted-by rev="1.7.22"/>
+				<caller organisation="com.github.cb372" name="scalacache-caffeine_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="com.eed3si9n" name="gigahorse-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.0"/>
+				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="1.7.25"/>
+				<caller organisation="sdev4ca1" name="sdev4ca1$sbt_2.12" conf="compile, runtime" rev="1.7.26" rev-constraint-default="1.7.26" rev-constraint-dynamic="1.7.26" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="com.github.cb372" name="scalacache-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
+				<caller organisation="org.apache.logging.log4j" name="log4j-slf4j-impl" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="2.11.1"/>
+				<caller organisation="io.methvin" name="directory-watcher" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.2"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.reactivestreams" name="reactive-streams">
 			<revision name="1.0.1" status="release" pubdate="20170809112439" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.reactive-streams.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master, master(*)" position="49">
 				<license name="CC0" url="http://creativecommons.org/publicdomain/zero/1.0/"/>
@@ -2402,66 +2491,6 @@
 				<metadata-artifact status="no" details="" size="11623" time="0" location="/home/ryan/.ivy2/cache/commons-logging/commons-logging/ivy-1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom"/>
 				<caller organisation="sdev4ca1" name="sdev4ca1$sbt_2.12" conf="compile, runtime" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="4.5"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.slf4j" name="slf4j-api">
-			<revision name="1.7.25" status="release" pubdate="20170316163632" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="true" default="false" conf="master(*), default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="50">
-				<metadata-artifact status="no" details="" size="5287" time="0" location="/home/ryan/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.25.xml" searched="true" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom"/>
-				<caller organisation="com.github.cb372" name="scalacache-caffeine_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
-				<caller organisation="org.webjars" name="webjars-locator-core" conf="default, compile, runtime, master" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.33"/>
-				<caller organisation="com.eed3si9n" name="gigahorse-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.0"/>
-				<caller organisation="com.typesafe" name="jse_2.12" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.3"/>
-				<caller organisation="io.apigee.trireme" name="trireme-kernel" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="org.slf4j" name="slf4j-simple" conf="default, compile, runtime, master" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="1.7.25"/>
-				<caller organisation="sdev4ca1" name="sdev4ca1$sbt_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="1.0-SNAPSHOT"/>
-				<caller organisation="com.github.cb372" name="scalacache-core_2.12" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.20.0"/>
-				<caller organisation="org.apache.logging.log4j" name="log4j-slf4j-impl" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="2.11.1"/>
-				<caller organisation="org.avaje" name="avaje-datasource-api" conf="compile, runtime" rev="1.7.12" rev-constraint-default="1.7.12" rev-constraint-dynamic="1.7.12" callerrev="1.1"/>
-				<caller organisation="io.apigee.trireme" name="trireme-core" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="com.spotify" name="docker-client" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="8.9.0"/>
-				<caller organisation="org.avaje" name="avaje-classpath-scanner" conf="compile, runtime" rev="[1.7,1.8)" rev-constraint-default="[1.7,1.8)" rev-constraint-dynamic="[1.7,1.8)" callerrev="2.2.2"/>
-				<caller organisation="io.apigee.trireme" name="trireme-node10src" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.1"/>
-				<caller organisation="io.methvin" name="directory-watcher" conf="compile, runtime" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.3.2"/>
-				<caller organisation="io.ebean" name="ebean" conf="default, compile, runtime, master" rev="[1.7.1,1.7.99)" rev-constraint-default="[1.7.1,1.7.99)" rev-constraint-dynamic="[1.7.1,1.7.99)" callerrev="10.4.4"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="[1.7,1.8)" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<evicted-by rev="1.7.25"/>
-				<caller organisation="org.avaje" name="avaje-classpath-scanner" conf="compile, runtime" rev="[1.7,1.8)" rev-constraint-default="[1.7,1.8)" rev-constraint-dynamic="[1.7,1.8)" callerrev="2.2.2"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.7.12" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<evicted-by rev="1.7.25"/>
-				<caller organisation="org.avaje" name="avaje-datasource-api" conf="compile, runtime" rev="1.7.12" rev-constraint-default="1.7.12" rev-constraint-dynamic="1.7.12" callerrev="1.1"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.7.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<evicted-by rev="1.7.25"/>
-				<caller organisation="io.apigee.trireme" name="trireme-core" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="io.apigee.trireme" name="trireme-kernel" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="io.apigee.trireme" name="trireme-node10src" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.7.7" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<evicted-by rev="1.7.25"/>
-				<caller organisation="org.webjars" name="webjars-locator-core" conf="default, compile, runtime, master" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.33"/>
-				<artifacts>
-				</artifacts>
-			</revision>
-			<revision name="1.7.22" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
-				<evicted-by rev="1.7.25"/>
-				<caller organisation="io.apigee.trireme" name="trireme-core" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="com.spotify" name="docker-client" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="8.9.0"/>
-				<caller organisation="com.typesafe" name="jse_2.12" conf="default, compile, runtime, master" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.3"/>
-				<caller organisation="io.apigee.trireme" name="trireme-kernel" conf="compile, runtime" rev="1.7.2" rev-constraint-default="1.7.2" rev-constraint-dynamic="1.7.2" callerrev="0.8.9"/>
-				<caller organisation="ch.qos.logback" name="logback-classic" conf="compile, runtime" rev="1.7.22" rev-constraint-default="1.7.22" rev-constraint-dynamic="1.7.22" callerrev="1.2.1"/>
 				<artifacts>
 				</artifacts>
 			</revision>

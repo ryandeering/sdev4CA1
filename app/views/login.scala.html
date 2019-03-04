@@ -1,4 +1,4 @@
-@(loginForm: Form[models.employees.Login], user:models.employees.Employee)
+@(loginForm: Form[models.employees.Login], user:models.employees.User)
 @import helper._
 
 @main("Login", user){
@@ -30,7 +30,7 @@
     'class -> "form-control input-xs", 'placeholder -> "Email")
 </div>
 <div class="form-group">
-    @inputText(loginForm("password"), '_label -> "",
+    @inputPassword(loginForm("password"), '_label -> "",
     'class -> "form-control input-xs", 'placeholder -> "Password")
 </div>
 <div class="form-group">

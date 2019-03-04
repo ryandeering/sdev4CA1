@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryan/Documents/sdev4CA1/conf/routes
-// @DATE:Fri Feb 15 10:24:50 GMT 2019
+// @DATE:Mon Mar 04 23:27:08 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -58,6 +58,46 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:26
+    def addEmployeeSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addEmployeeSubmit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/addEmployeeSubmit"})
+        }
+      """
+    )
+  
+    // @LINE:28
+    def managers: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.managers",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/managers"})
+        }
+      """
+    )
+  
+    // @LINE:27
+    def employeesManager: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.employeesManager",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/employees"})
+        }
+      """
+    )
+  
+    // @LINE:25
+    def addEmployee: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addEmployee",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/addEmployee"})
+        }
+      """
+    )
   
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(

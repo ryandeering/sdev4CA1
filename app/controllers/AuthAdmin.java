@@ -10,7 +10,7 @@ public class AuthAdmin extends Action.Simple{
 
         String id = ctx.session().get("email");
         if (id != null) {
-            Employee u = Employee.getEmployeeById(id);
+            User u = User.getUserById(id);
             if ("manager".equals(u.getRole())) {
                 return delegate.call(ctx);
             }

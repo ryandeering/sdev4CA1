@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.employees.Employee,play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[models.employees.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(user: models.employees.Employee):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: models.employees.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -37,9 +37,9 @@ Seq[Any](_display_(/*2.2*/main("Home", user)/*2.20*/{_display_(Seq[Any](format.r
     }
   }
 
-  def render(user:models.employees.Employee): play.twirl.api.HtmlFormat.Appendable = apply(user)
+  def render(user:models.employees.User): play.twirl.api.HtmlFormat.Appendable = apply(user)
 
-  def f:((models.employees.Employee) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
+  def f:((models.employees.User) => play.twirl.api.HtmlFormat.Appendable) = (user) => apply(user)
 
   def ref: this.type = this
 
@@ -48,10 +48,10 @@ Seq[Any](_display_(/*2.2*/main("Home", user)/*2.20*/{_display_(Seq[Any](format.r
 
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 15 12:07:19 GMT 2019
+                  DATE: Mon Mar 04 21:47:32 GMT 2019
                   SOURCE: /home/ryan/Documents/sdev4CA1/app/views/index.scala.html
-                  HASH: e91181c7d457b1e4cc4cb8670eaa2e2e36b393b6
-                  MATRIX: 967->1|1094->36|1120->54|1158->55|1189->60
+                  HASH: 27332afc3a2e54386100932ab9f20fd4e95e90ac
+                  MATRIX: 963->1|1086->32|1112->50|1150->51|1181->56
                   LINES: 28->1|33->2|33->2|33->2|34->3
                   -- GENERATED --
               */

@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object login extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.employees.Login],models.employees.Employee,play.twirl.api.HtmlFormat.Appendable] {
+object login extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.employees.Login],models.employees.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(loginForm: Form[models.employees.Login], user:models.employees.Employee):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(loginForm: Form[models.employees.Login], user:models.employees.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*2.2*/import helper._
@@ -61,7 +61,7 @@ Seq[Any](format.raw/*3.1*/("""
     'class -> "form-control input-xs", 'placeholder -> "Email")),format.raw/*30.64*/("""
 """),format.raw/*31.1*/("""</div>
 <div class="form-group">
-    """),_display_(/*33.6*/inputText(loginForm("password"), '_label -> "",
+    """),_display_(/*33.6*/inputPassword(loginForm("password"), '_label -> "",
     'class -> "form-control input-xs", 'placeholder -> "Password")),format.raw/*34.67*/("""
 """),format.raw/*35.1*/("""</div>
 <div class="form-group">
@@ -78,9 +78,9 @@ Seq[Any](format.raw/*3.1*/("""
     }
   }
 
-  def render(loginForm:Form[models.employees.Login],user:models.employees.Employee): play.twirl.api.HtmlFormat.Appendable = apply(loginForm,user)
+  def render(loginForm:Form[models.employees.Login],user:models.employees.User): play.twirl.api.HtmlFormat.Appendable = apply(loginForm,user)
 
-  def f:((Form[models.employees.Login],models.employees.Employee) => play.twirl.api.HtmlFormat.Appendable) = (loginForm,user) => apply(loginForm,user)
+  def f:((Form[models.employees.Login],models.employees.User) => play.twirl.api.HtmlFormat.Appendable) = (loginForm,user) => apply(loginForm,user)
 
   def ref: this.type = this
 
@@ -89,10 +89,10 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Feb 15 10:33:40 GMT 2019
+                  DATE: Mon Mar 04 21:57:48 GMT 2019
                   SOURCE: /home/ryan/Documents/sdev4CA1/app/views/login.scala.html
-                  HASH: dcea94bcde08677b544945ec5637aa1a4fc3f1d2
-                  MATRIX: 996->1|1142->76|1186->92|1213->94|1240->113|1278->114|1309->119|1353->138|1390->167|1429->169|1460->174|1525->213|1573->245|1613->247|1650->257|1660->258|1689->266|1730->277|1758->278|1794->284|1823->287|1862->317|1901->318|1933->323|2003->366|2017->371|2051->384|2083->389|2121->397|2154->404|2168->410|2241->474|2281->476|2309->478|2321->482|2352->492|2380->493|2436->523|2565->631|2593->632|2656->669|2791->783|2819->784|2956->891|2988->893
+                  HASH: afe6d89801da05765cb4c5407cd2f23dfc3b8f58
+                  MATRIX: 992->1|1134->72|1178->88|1205->90|1232->109|1270->110|1301->115|1345->134|1382->163|1421->165|1452->170|1517->209|1565->241|1605->243|1642->253|1652->254|1681->262|1722->273|1750->274|1786->280|1815->283|1854->313|1893->314|1925->319|1995->362|2009->367|2043->380|2075->385|2113->393|2146->400|2160->406|2233->470|2273->472|2301->474|2313->478|2344->488|2372->489|2428->519|2557->627|2585->628|2648->665|2787->783|2815->784|2952->891|2984->893
                   LINES: 28->1|31->2|34->3|35->4|35->4|35->4|36->5|38->7|38->7|38->7|39->8|41->10|41->10|41->10|42->11|42->11|42->11|43->12|44->13|45->14|47->16|47->16|47->16|48->17|49->18|49->18|49->18|50->19|51->20|57->26|57->26|57->26|57->26|58->27|58->27|58->27|59->28|60->29|61->30|62->31|64->33|65->34|66->35|71->40|72->41
                   -- GENERATED --
               */

@@ -29,3 +29,4 @@ libraryDependencies += "org.awaitility" % "awaitility" % "3.1.3" % Test
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
 libraryDependencies ++= Seq(evolutions, jdbc)
 libraryDependencies += "org.imgscalr" % "imgscalr-lib" % "4.2"
+libraryDependencies += "org.mindrot" % "jbcrypt" % "0.3m"

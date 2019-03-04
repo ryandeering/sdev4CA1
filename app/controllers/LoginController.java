@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 
-import models.employees.Login;
-import models.employees.Employee;
+import models.employees.*;
 
 public class LoginController extends Controller {
     private FormFactory formFactory;
@@ -26,7 +25,7 @@ public LoginController(FormFactory f){
 
 public Result login() {
     Form<Login> loginForm = formFactory.form(Login.class);
-    return ok(login.render(loginForm, Employee.getEmployeeById(session().get("email"))));
+    return ok(login.render(loginForm, User.getUserById(session().get("email"))));
  }
 
 
@@ -35,7 +34,7 @@ public Result loginSubmit(){
     Form<Login> loginForm = formFactory.form(Login.class).bindFromRequest();
 
     if (loginForm.hasErrors()){
-        return badRequest(login.render(loginForm, Employee.getEmployeeById(session().get("email"))));
+        return badRequest(login.render(loginForm, User.getUserById(session().get("email"))));
     } else {
         session().clear();
         session("email", loginForm.get().getEmail());
