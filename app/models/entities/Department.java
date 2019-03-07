@@ -5,14 +5,11 @@ import javax.persistence.*;
 import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
+import models.employees.*;
 
 import models.employees.Employee;
 @Entity
 @Table(name = "DEPARTMENT")
-
-@SequenceGenerator(name="did_seq", initialValue=1, allocationSize=1)
-@SuppressWarnings("SerializableClass")
-
 public class Department {
 
     @Id
@@ -34,7 +31,7 @@ public class Department {
         this.name = name;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -51,6 +48,27 @@ public class Department {
     }
 
 
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+
+
+    public static final Finder<Long, Department> find = new Finder<>(Department.class);
+
+    public static final List<Department> findAll() {
+        return Department.find.all();
+    }
+
+    public static Map<String,String> options(){
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+
+        for(Department d: Department.findAll()){
+            options.put(d.getId().toString(),d.getName());
+        }
+        return options;
+
+    }
 
 
 

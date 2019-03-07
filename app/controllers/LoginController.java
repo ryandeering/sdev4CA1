@@ -38,7 +38,7 @@ public Result loginSubmit(){
     } else {
         session().clear();
         session("email", loginForm.get().getEmail());
-        return redirect(controllers.routes.HomeController.index());
+        return redirect(controllers.routes.HomeController.index(0));
     }
 }
 

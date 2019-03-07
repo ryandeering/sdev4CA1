@@ -3,7 +3,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index()
+GET     /                           controllers.HomeController.index(department:Long?=0L)
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
@@ -26,6 +26,10 @@ GET     /manager/addEmployee                    controllers.HomeController.addEm
 POST    /manager/addEmployeeSubmit              controllers.HomeController.addEmployeeSubmit
 GET /manager/employees controllers.HomeController.employeesManager
 GET /manager/managers controllers.HomeController.managers
+GET     /department                 controllers.HomeController.department
+GET     /address                    controllers.HomeController.address
+GET     /project                 controllers.HomeController.project
+
 
 
 #GET /manager/updateEmployee/:id controllers.HomeController.updateEmployee(id: String)

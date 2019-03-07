@@ -1,4 +1,117 @@
-@(user: models.employees.User)
-@main("Home", user){
-    <h1>Meowdy.</h1>
-}
+@(employee: List[models.employees.Employee],department: List[models.entities.Department],project: List[models.entities.Project], user: models.employees.User, env: play.api.Environment)
+    @main("Employee", user) {
+        <p class="lead">Employee List</p>
+        <div class="row">
+            <div class="col-sm-2">
+                <h4>Categories</h4>
+                <div class="list-group">
+
+                    <a href="@routes.HomeController.index()" class="list-group-item">All categories</a>
+                    @for(d <- department) {
+                        <a href="@routes.HomeController.index(d.getId)" class="list-group-item">@d.getName
+                        <span class="badge">@d.getEmployees.size()</span>
+                        </a>
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+
+
+            @if(flash.containsKey("success")){
+
+                <div class="alert alert-success">
+                @flash.get("success")
+                </div>
+            }
+            <table class="table table-bordered table-hover table-condensed">
+
+                <thead>
+
+                        <!-- The header row-->
+
+                    <tr>
+
+                        <th>Image</th>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Address</th>
+
+                        <th>Department</th>
+
+                        <th>Project</th>
+
+
+                        <th>Delete</th>
+
+                        <th>Update</th>
+
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+
+
+
+
+                            @for(e<-employee) {
+
+
+                                    <!--   /*  @if(env.resource("public/images/Images/" + e.getEmail + ".jpg").isDefined) {
+                                    <td><img src="/assets/images/Images/@(e.getEmail + ".jpg")"/></td>
+                                } else {
+                                    <td><img src="/assets/images/Images/noImage.jpg"/></td>
+                                } */-->
+
+
+                    <td>@e.getEmail</td>
+
+                    <td> @e.getName</td>
+
+                    <td>@e.getAddress.getAddress</td>
+
+                    <td>@e.getDepartment.getName</td>
+
+
+
+                    <td>
+                             <a href="@routes.HomeController.addEmployee()" class="button-xs btn-danger">
+                            <button class="btn btn-primary">Delete an Employee</button>
+                        </a>
+
+                    </td>
+                    <td>
+                        <a href="@routes.HomeController.addEmployee()" class="button-xs btn-danger">
+                            <button class="btn btn-primary">Update an Employee</button>
+                        </a>
+                    </td>
+
+                    </tr>
+                </tbody>
+
+                }
+
+
+            </table>
+            <p>
+                <a href="@routes.HomeController.addEmployee()">
+                    <button class="btn btn-primary">Add an Employee</button>
+                </a>
+            </p>
+
+
+        </div>
+
+    }
+

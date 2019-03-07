@@ -42,6 +42,23 @@ public class Address extends Model {
         this.id = id;
     }
 
+    public static final Finder<Long, Address> find = new Finder<>(Address.class);
+
+    public static final List<Address> findAll() {
+        return Address.find.all();
+    }
+
+
+    public static Map<String,String> options(){
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+
+        for(Address a: Address.findAll()){
+            options.put(a.getId().toString(),a.getAddress());
+        }
+        return options;
+
+
+    }
 
 
 

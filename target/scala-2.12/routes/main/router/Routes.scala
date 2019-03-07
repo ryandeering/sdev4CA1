@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryan/Documents/sdev4CA1/conf/routes
-// @DATE:Mon Mar 04 23:27:08 GMT 2019
+// @DATE:Thu Mar 07 21:15:04 GMT 2019
 
 package router
 
@@ -51,7 +51,7 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.HomeController.index()"""),
+    ("""GET""", this.prefix, """controllers.HomeController.index(department:Long ?= 0L)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """count""", """controllers.CountController.count"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """message""", """controllers.AsyncController.message"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
@@ -62,6 +62,9 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """manager/addEmployeeSubmit""", """controllers.HomeController.addEmployeeSubmit"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """manager/employees""", """controllers.HomeController.employeesManager"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """manager/managers""", """controllers.HomeController.managers"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """department""", """controllers.HomeController.department"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """address""", """controllers.HomeController.address"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """project""", """controllers.HomeController.project"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -74,12 +77,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_HomeController_index0_invoker = createInvoker(
-    HomeController_1.index(),
+    HomeController_1.index(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "index",
-      Nil,
+      Seq(classOf[Long]),
       "GET",
       this.prefix + """""",
       """ An example controller showing a sample home page""",
@@ -267,13 +270,67 @@ class Routes(
     )
   )
 
+  // @LINE:29
+  private[this] lazy val controllers_HomeController_department11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("department")))
+  )
+  private[this] lazy val controllers_HomeController_department11_invoker = createInvoker(
+    HomeController_1.department,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "department",
+      Nil,
+      "GET",
+      this.prefix + """department""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:30
+  private[this] lazy val controllers_HomeController_address12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("address")))
+  )
+  private[this] lazy val controllers_HomeController_address12_invoker = createInvoker(
+    HomeController_1.address,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "address",
+      Nil,
+      "GET",
+      this.prefix + """address""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:31
+  private[this] lazy val controllers_HomeController_project13_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("project")))
+  )
+  private[this] lazy val controllers_HomeController_project13_invoker = createInvoker(
+    HomeController_1.project,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "project",
+      Nil,
+      "GET",
+      this.prefix + """project""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
     case controllers_HomeController_index0_route(params@_) =>
-      call { 
-        controllers_HomeController_index0_invoker.call(HomeController_1.index())
+      call(params.fromQuery[Long]("department", Some(0L))) { (department) =>
+        controllers_HomeController_index0_invoker.call(HomeController_1.index(department))
       }
   
     // @LINE:8
@@ -334,6 +391,24 @@ class Routes(
     case controllers_HomeController_managers10_route(params@_) =>
       call { 
         controllers_HomeController_managers10_invoker.call(HomeController_1.managers)
+      }
+  
+    // @LINE:29
+    case controllers_HomeController_department11_route(params@_) =>
+      call { 
+        controllers_HomeController_department11_invoker.call(HomeController_1.department)
+      }
+  
+    // @LINE:30
+    case controllers_HomeController_address12_route(params@_) =>
+      call { 
+        controllers_HomeController_address12_invoker.call(HomeController_1.address)
+      }
+  
+    // @LINE:31
+    case controllers_HomeController_project13_route(params@_) =>
+      call { 
+        controllers_HomeController_project13_invoker.call(HomeController_1.project)
       }
   }
 }

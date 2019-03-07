@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryan/Documents/sdev4CA1/conf/routes
-// @DATE:Mon Mar 04 23:27:08 GMT 2019
+// @DATE:Thu Mar 07 21:15:04 GMT 2019
 
 import play.api.mvc.Call
 
@@ -54,10 +54,34 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "manager/addEmployeeSubmit")
     }
   
+    // @LINE:30
+    def address(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "address")
+    }
+  
     // @LINE:28
     def managers(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "manager/managers")
+    }
+  
+    // @LINE:29
+    def department(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "department")
+    }
+  
+    // @LINE:31
+    def project(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "project")
+    }
+  
+    // @LINE:6
+    def index(department:Long = 0L): Call = {
+      
+      Call("GET", _prefix + play.core.routing.queryString(List(if(department == 0L) None else Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("department", department)))))
     }
   
     // @LINE:27
@@ -70,12 +94,6 @@ package controllers {
     def addEmployee(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "manager/addEmployee")
-    }
-  
-    // @LINE:6
-    def index(): Call = {
-      
-      Call("GET", _prefix)
     }
   
   }

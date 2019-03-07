@@ -1,3 +1,0 @@
-[error] /home/ryan/Documents/sdev4CA1/app/controllers/HomeController.java:103:1: incompatible types: java.util.List<models.employees.Manager> cannot be converted to java.util.List<models.employees.Employee>
-[error]         return ok(employees.render(userList,User.getEmployeeById(session().get("email"))));
-[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output

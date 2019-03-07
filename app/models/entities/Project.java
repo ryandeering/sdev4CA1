@@ -54,12 +54,23 @@ public class Project extends Model {
     }
 
 
-    public List<Employee> getEmployees() {
-        return employees;
+    public static final Finder<Long, Project> find = new Finder<>(Project.class);
+
+    public static final List<Project> findAll() {
+        return Project.find.all();
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public static Map<String,String> options(){
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+
+        for(Project p: Project.findAll()){
+            options.put(p.getId().toString(),p.getPname());
+        }
+        return options;
+
+
     }
+
+
 
     }
