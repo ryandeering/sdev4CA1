@@ -22,7 +22,7 @@ public class User extends Model {
     @Id
     private String email;
 
-
+    @Column(insertable=false,updatable=false)
     private String role;
 
     @Constraints.Required

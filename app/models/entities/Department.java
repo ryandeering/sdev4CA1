@@ -10,7 +10,7 @@ import models.employees.*;
 import models.employees.Employee;
 @Entity
 @Table(name = "DEPARTMENT")
-public class Department {
+public class Department extends Model{
 
     @Id
     private Long id;

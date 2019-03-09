@@ -4,7 +4,7 @@ import io.ebean.Finder;
 
 import javax.persistence.*;
 import java.util.List;
-
+@Table(name="EMPLOYEE")
 @Entity
 // the user type of this class is "admin"
 @DiscriminatorValue("manager")

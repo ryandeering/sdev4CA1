@@ -1,0 +1,48 @@
+@(projects: List[models.entities.Project], user: models.employees.User)
+
+    @main("Projects", user) {
+        <p class="lead">Projects</p>
+        <br>
+        @if(flash.containsKey("success")) {
+            <div class="alert alert-success">
+            @flash.get("success")
+            </div>
+        }
+
+        <div class="col-sm-4">
+            <table class="table table-bordered table condensed">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Due Date</th>
+                        <th colspan="2">Update/Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                @for(p <- projects) {
+                    <tr>
+                        <td class="numeric">@p.getId</td>
+                        <td>@p.getPname</td>
+
+                        <td>
+                            <a href="@routes.HomeController.updateProject(p.getId)" class="button xs btn-danger">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@routes.HomeController.deleteProject(p.getId)" class="button xs btn-danger" onclick="return confirmDel();">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            <a href="@routes.HomeController.addProject()">
+                <button class="btn btn-primary">Add a project</button>
+            </a>
+        </div>
+    }

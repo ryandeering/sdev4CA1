@@ -1,0 +1,39 @@
+@(email: String, updateEmployeeForm: Form[models.employees.Employee], user: models.employees.User)
+@import helper._
+@import models.entities.Project
+@import models.entities.Department
+
+
+
+
+@main("Update Employee", user) {
+    <p class="lead">Update Employee</p>
+    @form(action=routes.HomeController.updateEmployeeSubmit(email), 'class -> "form-horizontal", 'role -> "form", 'enctype -> "multipart/form-data") {
+        @CSRF.formField
+        @inputText(updateEmployeeForm("email"), '_label -> "Email", 'class -> "form-control")
+        @inputText(updateEmployeeForm("password"), '_label -> "Password", 'class -> "form-control")
+        @inputText(updateEmployeeForm("name"), '_label -> "Name", 'class -> "form-control")
+        @inputText(updateEmployeeForm("address.address"), '_label -> "Address", 'class -> "form-control")
+        @select(updateEmployeeForm("department.id"), options(Department.options), '_label -> "Department", '_default -> "-- Choose a department --", '_showConstraints -> false, 'class -> "form-control")
+        @inputText(updateEmployeeForm("role"), '_label -> "Role, Choose either 'employee' or 'manager'", 'class -> "form-control")
+
+        @for((value, name) <- Project.options) {
+            <input type="checkbox" name="projSelect[]" value="@value"
+            @if(Project.inProject(value.toLong, email)) {
+                checked
+            }
+            />@name<br>
+        }
+
+        <label>Image Upload</label>
+        <input class="btn-sm btn-default" type="file" name="upload">
+        <br></br>
+
+        <div class="actions">
+            <input type="submit" value="Update Employee" class="btn btn-primary">
+            <a href="@routes.HomeController.index(0)">
+                <button type="button" class="btn btn-warning">Cancel</button>
+            </a>
+        </div>
+    }
+}

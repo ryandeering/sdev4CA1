@@ -9,7 +9,7 @@
 
 
 @main("Add Employee", user){
-    <p class#"lead">Add a new Employee</p>
+    <p class="lead">Add a new Employee</p>
 
     @form(action=routes.HomeController.addEmployeeSubmit(),
         'class -> "form-horizontal",
@@ -19,33 +19,27 @@
 
         @CSRF.formField
 
-        @inputText(employeeForm("id"), '_label -> "id", 'class -> "form-control")
+        @inputText(employeeForm("email"), '_label -> "id", 'class -> "form-control")
+
+        @inputText(employeeForm("address.address"), '_label -> "Address", 'class -> "form-control")
         @select(
-
-            employeeForm("Department.id"),options(Department.options),'_label ->"Department",'_default -> "--Choose department please--",
-            '_showConstraints -> false, 'class-> "form-control"
-
+            employeeForm("department.id"),
+            options(Department.options),
+            '_label -> "Department", '_default -> "-- Choose a Department --",
+            '_showConstraints -> false, 'class -> "form-control"
         )
-        @select(
 
-            employeeForm("Address.id"),options(Address.options),'_label ->"Address",'_default -> "--Choose Address please--",
-            '_showConstraints -> false, 'class-> "form-control"
 
-        )
         @inputText(employeeForm("name"), '_label -> "name", 'class -> "form-control")
+
+        @inputText(employeeForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
+
+        @inputText(employeeForm("password"), '_label -> "Password", 'class -> "form-control")
 
 
         @for((value, name) <- Project.options) {
-            <input type="checkbox" name="projSelect[]" value="@value"
-
-            />@name<br>
+            <input type="checkbox" name="projSelect[]" value="@value"/>@name<br>
         }
-
-
-        @inputText(employeeForm("id"), '_label -> "", 'hidden -> "hidden")
-
-        @inputText(employeeForm("password"), '_label -> "Password", 'class -> "form-control")
-        @inputText(employeeForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
 
 
 

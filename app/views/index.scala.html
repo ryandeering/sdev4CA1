@@ -1,117 +1,82 @@
-@(employee: List[models.employees.Employee],department: List[models.entities.Department],project: List[models.entities.Project], user: models.employees.User, env: play.api.Environment)
-    @main("Employee", user) {
-        <p class="lead">Employee List</p>
-        <div class="row">
-            <div class="col-sm-2">
-                <h4>Categories</h4>
-                <div class="list-group">
+@(employees: List[models.employees.Employee], departments: List[models.entities.Department], project: List[models.entities.Project], user: models.employees.User, env: play.api.Environment)
 
-                    <a href="@routes.HomeController.index()" class="list-group-item">All categories</a>
-                    @for(d <- department) {
-                        <a href="@routes.HomeController.index(d.getId)" class="list-group-item">@d.getName
-                        <span class="badge">@d.getEmployees.size()</span>
-                        </a>
-                    }
-
-
-
-                </div>
+@main("Employees", user) {
+    <p class="lead">Employee List</p>
+    <br>
+    <div class="row">
+        <div class="col-sm-2">
+            <h4>Departments</h4>
+            <div class="list-group">
+                <a href="@routes.HomeController.index(0)" class="list-group-item">All Departments</a>
+                @for(d <- departments) {
+                    <a href="@routes.HomeController.index(d.getId)" class="list-group-item">@d.getName
+                    <span class="badge">@d.getEmployees.size()</span>
+                    </a>
+                }
             </div>
         </div>
-        <div class="col-sm-10">
-
-
-            @if(flash.containsKey("success")){
-
-                <div class="alert alert-success">
-                @flash.get("success")
-                </div>
-            }
+        <div class="col-sm-7">
             <table class="table table-bordered table-hover table-condensed">
-
+                @if(flash.containsKey("success")) {
+                    <div class="alert alert-success">
+                    @flash.get("success")
+                    </div>
+                }
                 <thead>
-
-                        <!-- The header row-->
-
                     <tr>
-
                         <th>Image</th>
-
-                        <th>ID</th>
-
+                        <th>Email</th>
                         <th>Name</th>
-
                         <th>Address</th>
-
                         <th>Department</th>
-
-                        <th>Project</th>
-
-
-                        <th>Delete</th>
-
-                        <th>Update</th>
-
-
+                        @if(user.getRole == "manager") {
+                            <th colspan="2"> Update/ Delete</th>
+                        }
                     </tr>
-
                 </thead>
 
                 <tbody>
-
+                @for(e <- employees) {
                     <tr>
-
-
-
-
-
-                            @for(e<-employee) {
-
-
-                                    <!--   /*  @if(env.resource("public/images/Images/" + e.getEmail + ".jpg").isDefined) {
-                                    <td><img src="/assets/images/Images/@(e.getEmail + ".jpg")"/></td>
-                                } else {
-                                    <td><img src="/assets/images/Images/noImage.jpg"/></td>
-                                } */-->
-
-
+                        @if(env.resource("public/images/employeeImages/thumbnails/" + e.getEmail + ".jpg").isDefined) {
+                            <td><img src="/assets/images/employeeImages/thumbnails/@(e.getEmail + ".jpg")"/></td>
+                        } else {
+                            <td><img src="/assets/images/employeeImages/thumbnails/noImage.png"></td>
+                        }
                     <td>@e.getEmail</td>
-
-                    <td> @e.getName</td>
-
-                    <td>@e.getAddress.getAddress</td>
-
+                    <td>
+                        @if(user.getEmail == e.getEmail) {
+                            <a href="@routes.HomeController.employeeProjects(e.getEmail)">@e.getName</a>
+                        } else if(user.getRole == "manager") {
+                    <a href="@routes.HomeController.employeeProjects(e.getEmail)">@e.getName</a>
+                        }else {
+                        @e.getName
+                        }
+                    </td>
+                    <td>@e.getAddress.getAddress()</td>
                     <td>@e.getDepartment.getName</td>
-
-
-
-                    <td>
-                             <a href="@routes.HomeController.addEmployee()" class="button-xs btn-danger">
-                            <button class="btn btn-primary">Delete an Employee</button>
-                        </a>
-
-                    </td>
-                    <td>
-                        <a href="@routes.HomeController.addEmployee()" class="button-xs btn-danger">
-                            <button class="btn btn-primary">Update an Employee</button>
-                        </a>
-                    </td>
-
+                    <td>@e.getProjects.size()</td>
+                        @if(user.getRole == "manager") {
+                            <td>
+                                <a href="@routes.HomeController.updateEmployee(e.getEmail)" class="button xs btn-danger">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@routes.HomeController.deleteEmployee(e.getEmail)" class="button xs btn-danger" onclick="return confirmDel();">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+                            </td>
+                        }
                     </tr>
-                </tbody>
-
                 }
-
-
+                </tbody>
             </table>
-            <p>
+            <div>
                 <a href="@routes.HomeController.addEmployee()">
-                    <button class="btn btn-primary">Add an Employee</button>
+                    <button class="btn btn-primary">Add an employee</button>
                 </a>
-            </p>
-
-
+            </div>
         </div>
-
-    }
-
+    </div>
+}

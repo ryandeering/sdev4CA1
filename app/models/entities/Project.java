@@ -38,7 +38,7 @@ public class Project extends Model {
         return id;
     }
 
-    public void setId(){
+    public void setId(Long id){
         this.id = id;
     }
 
@@ -69,6 +69,14 @@ public class Project extends Model {
         return options;
 
 
+    }
+
+
+
+    public static boolean inProject(Long project, String employee) {
+        return find.query().where().eq("employees.email", employee)
+                .eq("id", project)
+                .findList().size() > 0;
     }
 
 

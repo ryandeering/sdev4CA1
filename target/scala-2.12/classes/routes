@@ -24,13 +24,27 @@ GET     /logout                     controllers.LoginController.logout
 
 GET     /manager/addEmployee                    controllers.HomeController.addEmployee
 POST    /manager/addEmployeeSubmit              controllers.HomeController.addEmployeeSubmit
+GET     /updateEmployee/:email/   controllers.HomeController.updateEmployee(email: String)
+POST    /updateEmployeeSubmit/:email/ controllers.HomeController.updateEmployeeSubmit(email: String)
+GET     /delEmployee/:id             controllers.HomeController.deleteEmployee(id: String)
+
 GET /manager/employees controllers.HomeController.employeesManager
-GET /manager/managers controllers.HomeController.managers
-GET     /department                 controllers.HomeController.department
-GET     /address                    controllers.HomeController.address
-GET     /project                 controllers.HomeController.project
+GET     /departments               controllers.HomeController.departments
+
+GET     /projects                 controllers.HomeController.projects
 
 
+GET     /employeeProjects           controllers.HomeController.employeeProjects(email:String?=null)
+
+
+GET     /manager/addDepartment              controllers.HomeController.addDepartment
+POST    /manager/addDepartmentSubmit        controllers.HomeController.addDepartmentSubmit
+
+GET     /manager/addProject                 controllers.HomeController.addProject
+POST    /manager/addProjectSubmit           controllers.HomeController.addProjectSubmit
+GET     /manager/updateProject/:id          controllers.HomeController.updateProject(id: Long)
+POST    /manager/updateProjectSubmit/:id    controllers.HomeController.updateProjectSubmit(id: Long)
+GET     /manager/deleteProject/:id           controllers.HomeController.deleteProject(id: Long)
 
 #GET /manager/updateEmployee/:id controllers.HomeController.updateEmployee(id: String)
 #GET /manager/deleteEmployee/:id controllers.HomeController.deleteEmployee(id: String)

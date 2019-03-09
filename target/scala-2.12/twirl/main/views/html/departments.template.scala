@@ -22,7 +22,7 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object department extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[models.entities.Department],models.employees.User,play.twirl.api.HtmlFormat.Appendable] {
+object departments extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[models.entities.Department],models.employees.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
   def apply/*1.2*/(department: List[models.entities.Department], user: models.employees.User):play.twirl.api.HtmlFormat.Appendable = {
@@ -70,10 +70,10 @@ Seq[Any](_display_(/*2.2*/main("Department", user)/*2.26*/{_display_(Seq[Any](fo
 
               /*
                   -- GENERATED --
-                  DATE: Thu Mar 07 21:15:05 GMT 2019
-                  SOURCE: /home/ryan/Documents/sdev4CA1/app/views/department.scala.html
+                  DATE: Sat Mar 09 20:31:01 GMT 2019
+                  SOURCE: /home/ryan/Documents/sdev4CA1/app/views/departments.scala.html
                   HASH: 14cb2bf7a33b0e9a23eaeb9e894a23cefa17ef1e
-                  MATRIX: 1001->1|1170->78|1202->102|1240->103|1271->108|1337->149|1377->181|1415->182|1450->191|1519->234|1532->239|1567->254|1602->263|1643->275|1674->280|1927->506|1961->524|2001->526|2046->543|2103->573|2113->574|2140->580|2198->611|2208->612|2237->620|2309->661|2345->670|2398->693
+                  MATRIX: 1002->1|1171->78|1203->102|1241->103|1272->108|1338->149|1378->181|1416->182|1451->191|1520->234|1533->239|1568->254|1603->263|1644->275|1675->280|1928->506|1962->524|2002->526|2047->543|2104->573|2114->574|2141->580|2199->611|2209->612|2238->620|2310->661|2346->670|2399->693
                   LINES: 28->1|33->2|33->2|33->2|34->3|35->4|35->4|35->4|36->5|37->6|37->6|37->6|38->7|39->8|40->9|48->17|48->17|48->17|49->18|50->19|50->19|50->19|51->20|51->20|51->20|53->22|54->23|56->25
                   -- GENERATED --
               */

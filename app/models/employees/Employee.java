@@ -13,7 +13,7 @@ import play.data.validation.*;
 
 
 
-@Table(name="EMPLOYEES")
+@Table(name="EMPLOYEE")
 @Entity
 @DiscriminatorValue("employee")
 
@@ -38,15 +38,15 @@ public class Employee extends User{
         super(email, name, password, role);
     }
 
-    public static final Finder<Long, Employee> find = new Finder<>(Employee.class);
+    public static final Finder<String, Employee> find = new Finder<>(Employee.class);
 
     public static final List<Employee> findAll() {
         return Employee.find.all();
     }
 
-    public static List<Employee> findFilter(Long catID, String filter) {
+    public static List<Employee> findFilter(String ID, String filter) {
         return Employee.find.query().where()
-                .eq("deps.id", catID)
+                .eq("deps.id", ID)
                 .ilike("name", "%" + filter + "%")
                 .orderBy("name asc")
                 .findList();
@@ -61,6 +61,15 @@ public class Employee extends User{
     }
 
 
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public List<Long> projs = new ArrayList<Long>();
+
+    public List<Long> getProjs(){
+        return projs;
+    }
 
 
     }
