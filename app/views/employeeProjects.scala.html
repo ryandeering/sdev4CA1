@@ -1,4 +1,4 @@
-@(projects: List[models.entities.Project], employee: models.employees.Employee, user: models.employees.Employee)
+@(projects: List[models.entities.Project], employee: models.employees.Employee, user: models.employees.User)
 
 @main("Employee Projects", user) {
     <p class="lead">Projects for @employee.getName</p>
@@ -7,14 +7,16 @@
         <table class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Name</th>
-                    <th>Description</th>
+
                 </tr>
             </thead>
 
             <tbody>
             @for(p <- projects) {
                 <tr>
+                    <td>@p.getId</td>
                     <td>@p.getPname</td>
 
                 </tr>

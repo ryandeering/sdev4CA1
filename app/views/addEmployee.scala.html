@@ -1,12 +1,11 @@
+
+@(employeeForm: Form[models.employees.Employee], user: models.employees.User)
+@import helper._
 @import models.employees.Employee
 @import models.employees.User
 @import models.entities.Project;
 @import models.entities.Address;
 @import models.entities.Department;
-
-@(employeeForm: Form[models.employees.Employee], user: models.employees.User)
-@import helper._
-
 
 @main("Add Employee", user){
     <p class="lead">Add a new Employee</p>

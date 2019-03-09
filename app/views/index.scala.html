@@ -29,6 +29,7 @@
                         <th>Name</th>
                         <th>Address</th>
                         <th>Department</th>
+
                         @if(user.getRole == "manager") {
                             <th colspan="2"> Update/ Delete</th>
                         }
@@ -54,8 +55,8 @@
                         }
                     </td>
                     <td>@e.getAddress.getAddress()</td>
-                    <td>@e.getDepartment.getName</td>
-                    <td>@e.getProjects.size()</td>
+                    <td>@e.getDepartment.getName()</td>
+
                         @if(user.getRole == "manager") {
                             <td>
                                 <a href="@routes.HomeController.updateEmployee(e.getEmail)" class="button xs btn-danger">
@@ -63,7 +64,7 @@
                                 </a>
                             </td>
                             <td>
-                                <a href="@routes.HomeController.deleteEmployee(e.getEmail)" class="button xs btn-danger" onclick="return confirmDel();">
+                                <a href="@routes.HomeController.deleteEmployee(e.getEmail)" class="button xs btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </td>
