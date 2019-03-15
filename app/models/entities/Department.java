@@ -7,7 +7,7 @@ import play.data.format.*;
 import play.data.validation.*;
 import models.employees.*;
 
-import models.employees.Employee;
+
 @Entity
 @Table(name = "DEPARTMENT")
 public class Department extends Model{
@@ -15,7 +15,7 @@ public class Department extends Model{
     @Id
     private Long id;
 
-    @Constraints.Required
+
     private String name;
 
     @OneToMany(mappedBy = "department", cascade = CascadeType.PERSIST)
@@ -29,6 +29,7 @@ public class Department extends Model{
     public Department(Long id, String name, List<Employee> employees) {
         this.id = id;
         this.name = name;
+        this.employees = employees;
     }
 
     public Long getId() {

@@ -19,10 +19,15 @@ public class Address extends Model {
     @Id
     private Long id;
 
-    @Constraints.Required
     private String address;
 
     public Address(){
+    }
+
+
+    public Address(Long id, String address){
+        this.id = id;
+        this.address = address;
     }
 
     public String getAddress() {

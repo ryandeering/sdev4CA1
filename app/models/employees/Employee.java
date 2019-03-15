@@ -8,34 +8,32 @@ import models.entities.Project;
 import javax.persistence.*;
 import java.util.*;
 import java.lang.Object;
+
 import play.data.format.*;
 import play.data.validation.*;
 
 
-
-@Table(name="EMPLOYEE")
+@Table(name = "EMPLOYEE")
 @Entity
 @DiscriminatorValue("employee")
 
 
-
-public class Employee extends User{
+public class Employee extends User {
 
     @ManyToOne
-    private Department department;
+    public Department department;
 
-    @OneToOne(cascade=CascadeType.ALL)
-    private Address address;
+    @OneToOne(cascade = CascadeType.ALL)
+    public Address address;
 
-    @ManyToMany(cascade = CascadeType.ALL,mappedBy="employees")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "employees")
     public List<Project> projects;
-
-
-
 
 
     public Employee(String email, String name, String password, String role) {
         super(email, name, password, role);
+        this.department = department;
+        this.address = address;
     }
 
     public static final Finder<String, Employee> find = new Finder<>(Employee.class);
@@ -65,11 +63,26 @@ public class Employee extends User{
         return projects;
     }
 
-    public List<Long> projs = new ArrayList<Long>();
+    public List<Long> projSelect = new ArrayList<Long>(); //equivalent of catSelect
 
-    public List<Long> getProjs(){
-        return projs;
+    public List<Long> getprojSelect() {
+        return projSelect;
+    }
+
+    public void setprojSelect(List<Long> projSelect) {
+        this.projSelect = projSelect;
     }
 
 
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+}
