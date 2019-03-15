@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object addEmployee extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[Form[models.employees.Employee],models.employees.User,play.twirl.api.HtmlFormat.Appendable] {
+object addEmployee extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[Form[models.employees.Employee],Form[models.entities.Address],Form[models.entities.Department],models.employees.User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(employeeForm: Form[models.employees.Employee], user: models.employees.User):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(employeeForm: Form[models.employees.Employee], addressForm: Form[models.entities.Address], departmentForm: Form[models.entities.Department],user: models.employees.User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*3.2*/import helper._
@@ -50,9 +50,9 @@ Seq[Any](format.raw/*9.1*/("""
 
         """),_display_(/*21.10*/inputText(employeeForm("email"), '_label -> "id", 'class -> "form-control")),format.raw/*21.85*/("""
 
-        """),_display_(/*23.10*/inputText(employeeForm("address.address"), '_label -> "Address", 'class -> "form-control")),format.raw/*23.100*/("""
+        """),_display_(/*23.10*/inputText(addressForm("address.address"), '_label -> "Address", 'class -> "form-control")),format.raw/*23.99*/("""
         """),_display_(/*24.10*/select(
-            employeeForm("department.id"),
+            departmentForm("department.id"),
             options(Department.options),
             '_label -> "Department", '_default -> "-- Choose a Department --",
             '_showConstraints -> false, 'class -> "form-control"
@@ -89,9 +89,9 @@ Seq[Any](format.raw/*9.1*/("""
     }
   }
 
-  def render(employeeForm:Form[models.employees.Employee],user:models.employees.User): play.twirl.api.HtmlFormat.Appendable = apply(employeeForm,user)
+  def render(employeeForm:Form[models.employees.Employee],addressForm:Form[models.entities.Address],departmentForm:Form[models.entities.Department],user:models.employees.User): play.twirl.api.HtmlFormat.Appendable = apply(employeeForm,addressForm,departmentForm,user)
 
-  def f:((Form[models.employees.Employee],models.employees.User) => play.twirl.api.HtmlFormat.Appendable) = (employeeForm,user) => apply(employeeForm,user)
+  def f:((Form[models.employees.Employee],Form[models.entities.Address],Form[models.entities.Department],models.employees.User) => play.twirl.api.HtmlFormat.Appendable) = (employeeForm,addressForm,departmentForm,user) => apply(employeeForm,addressForm,departmentForm,user)
 
   def ref: this.type = this
 
@@ -100,10 +100,10 @@ Seq[Any](format.raw/*9.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Mar 09 21:03:56 GMT 2019
-                  SOURCE: /home/ryan/Documents/sdev4CA1/app/views/addEmployee.scala.html
-                  HASH: 76b36abd90aa16a219129838578952b2de4eede8
-                  MATRIX: 1001->2|1150->80|1173->97|1213->131|1249->161|1288->194|1327->227|1390->262|1418->264|1453->290|1492->291|1524->296|1595->341|1763->500|1803->502|1842->514|1855->518|1886->528|1924->539|2020->614|2058->625|2170->715|2207->725|2473->970|2512->982|2609->1058|2647->1069|2764->1164|2802->1175|2907->1259|2946->1271|2999->1308|3039->1310|3080->1323|3158->1374|3184->1379|3215->1383|3240->1387|3285->1401|3327->1416|3606->1668|3621->1674|3666->1698
+                  DATE: Fri Mar 15 12:24:44 GMT 2019
+                  SOURCE: /home/ryan/Documents/a/sdev4CA1/app/views/addEmployee.scala.html
+                  HASH: 8a00c320423e04ae89cd77d9258d71f6e654e8bf
+                  MATRIX: 1064->2|1306->173|1329->190|1369->224|1405->254|1444->287|1483->320|1546->355|1574->357|1609->383|1648->384|1680->389|1751->434|1919->593|1959->595|1998->607|2011->611|2042->621|2080->632|2176->707|2214->718|2324->807|2361->817|2629->1064|2668->1076|2765->1152|2803->1163|2920->1258|2958->1269|3063->1353|3102->1365|3155->1402|3195->1404|3236->1417|3314->1468|3340->1473|3371->1477|3396->1481|3441->1495|3483->1510|3762->1762|3777->1768|3822->1792
                   LINES: 28->2|31->3|32->4|33->5|34->6|35->7|36->8|39->9|40->10|40->10|40->10|41->11|43->13|46->16|46->16|49->19|49->19|49->19|51->21|51->21|53->23|53->23|54->24|59->29|62->32|62->32|64->34|64->34|66->36|66->36|69->39|69->39|69->39|70->40|70->40|70->40|70->40|70->40|71->41|78->48|83->53|83->53|83->53
                   -- GENERATED --
               */

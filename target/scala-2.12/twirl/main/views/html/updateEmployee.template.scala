@@ -46,7 +46,7 @@ Seq[Any](format.raw/*5.1*/("""
         """),_display_(/*15.10*/inputText(updateEmployeeForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*15.92*/("""
         """),_display_(/*16.10*/inputText(updateEmployeeForm("address.address"), '_label -> "Address", 'class -> "form-control")),format.raw/*16.106*/("""
         """),_display_(/*17.10*/select(updateEmployeeForm("department.id"), options(Department.options), '_label -> "Department", '_default -> "-- Choose a department --", '_showConstraints -> false, 'class -> "form-control")),format.raw/*17.203*/("""
-        """),_display_(/*18.10*/inputText(updateEmployeeForm("role"), '_label -> "Role, Choose either 'employee' or 'manager'", 'class -> "form-control")),format.raw/*18.131*/("""
+        """),_display_(/*18.10*/inputText(updateEmployeeForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")),format.raw/*18.111*/("""
 
         """),_display_(/*20.10*/for((value, name) <- Project.options) yield /*20.47*/ {_display_(Seq[Any](format.raw/*20.49*/("""
             """),format.raw/*21.13*/("""<input type="checkbox" name="projSelect[]" value=""""),_display_(/*21.64*/value),format.raw/*21.69*/(""""
@@ -83,10 +83,10 @@ Seq[Any](format.raw/*5.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Mar 09 20:31:01 GMT 2019
-                  SOURCE: /home/ryan/Documents/sdev4CA1/app/views/updateEmployee.scala.html
-                  HASH: 2cc611a66dc066552410e392eb1ebcc6676818d1
-                  MATRIX: 1011->1|1181->100|1204->117|1242->149|1304->183|1334->188|1371->217|1410->219|1442->224|1509->265|1662->408|1703->410|1740->420|1753->424|1784->434|1821->444|1926->528|1963->538|2075->628|2112->638|2215->720|2252->730|2370->826|2407->836|2622->1029|2659->1039|2802->1160|2840->1171|2893->1208|2933->1210|2974->1223|3052->1274|3078->1279|3120->1294|3171->1336|3211->1338|3256->1355|3308->1376|3349->1389|3379->1392|3404->1396|3449->1410|3486->1420|3763->1670|3778->1676|3823->1700|3971->1818
+                  DATE: Fri Mar 15 12:24:44 GMT 2019
+                  SOURCE: /home/ryan/Documents/a/sdev4CA1/app/views/updateEmployee.scala.html
+                  HASH: 4ee7511c772ac0acaa4293e62428a5c59cb4ddb5
+                  MATRIX: 1011->1|1181->100|1204->117|1242->149|1304->183|1334->188|1371->217|1410->219|1442->224|1509->265|1662->408|1703->410|1740->420|1753->424|1784->434|1821->444|1926->528|1963->538|2075->628|2112->638|2215->720|2252->730|2370->826|2407->836|2622->1029|2659->1039|2782->1140|2820->1151|2873->1188|2913->1190|2954->1203|3032->1254|3058->1259|3100->1274|3151->1316|3191->1318|3236->1335|3288->1356|3329->1369|3359->1372|3384->1376|3429->1390|3466->1400|3743->1650|3758->1656|3803->1680|3951->1798
                   LINES: 28->1|31->2|32->3|33->4|36->5|40->9|40->9|40->9|41->10|42->11|42->11|42->11|43->12|43->12|43->12|44->13|44->13|45->14|45->14|46->15|46->15|47->16|47->16|48->17|48->17|49->18|49->18|51->20|51->20|51->20|52->21|52->21|52->21|53->22|53->22|53->22|54->23|55->24|56->25|56->25|56->25|57->26|59->28|65->34|65->34|65->34|69->38
                   -- GENERATED --
               */

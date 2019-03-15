@@ -1,5 +1,5 @@
 
-@(employeeForm: Form[models.employees.Employee], user: models.employees.User)
+@(employeeForm: Form[models.employees.Employee], addressForm: Form[models.entities.Address], departmentForm: Form[models.entities.Department],user: models.employees.User)
 @import helper._
 @import models.employees.Employee
 @import models.employees.User
@@ -20,9 +20,9 @@
 
         @inputText(employeeForm("email"), '_label -> "id", 'class -> "form-control")
 
-        @inputText(employeeForm("address.address"), '_label -> "Address", 'class -> "form-control")
+        @inputText(addressForm("address.address"), '_label -> "Address", 'class -> "form-control")
         @select(
-            employeeForm("department.id"),
+            departmentForm("department.id"),
             options(Department.options),
             '_label -> "Department", '_default -> "-- Choose a Department --",
             '_showConstraints -> false, 'class -> "form-control"

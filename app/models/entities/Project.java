@@ -10,11 +10,7 @@ import play.data.validation.*;
 @Table(name = "PROJECT")
 public class Project extends Model {
 
-
-
-
-
-    @Constraints.Required
+    
     private String pname;
 
     @Id
@@ -31,6 +27,7 @@ public class Project extends Model {
     public Project(String pname, Long id, List<Employee> employees) {
         this.pname = pname;
         this.id = id;
+        this.employees = employees;
     }
 
 
@@ -70,6 +67,19 @@ public class Project extends Model {
 
 
     }
+
+
+    public List<Long> projs = new ArrayList<Long>(); //equivalent of catSelect
+
+    public List<Long> getProjs(){
+        return projs;
+    }
+
+    public void setProjs(List<Long> projs) {
+        this.projs = projs;
+    }
+
+
 
 
 

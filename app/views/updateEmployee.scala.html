@@ -15,7 +15,7 @@
         @inputText(updateEmployeeForm("name"), '_label -> "Name", 'class -> "form-control")
         @inputText(updateEmployeeForm("address.address"), '_label -> "Address", 'class -> "form-control")
         @select(updateEmployeeForm("department.id"), options(Department.options), '_label -> "Department", '_default -> "-- Choose a department --", '_showConstraints -> false, 'class -> "form-control")
-        @inputText(updateEmployeeForm("role"), '_label -> "Role, Choose either 'employee' or 'manager'", 'class -> "form-control")
+        @inputText(updateEmployeeForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
 
         @for((value, name) <- Project.options) {
             <input type="checkbox" name="projSelect[]" value="@value"
