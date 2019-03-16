@@ -48,7 +48,6 @@ public class HomeController extends Controller {
         Form<Address> addressForm = formFactory.form(Address.class);
         Form<Department> departmentForm = formFactory.form(Department.class);
         Form<Employee> employeeForm = formFactory.form(Employee.class);
-        Form<Project> projectForm = formFactory.form(Project.class);
         return ok(addEmployee.render(employeeForm, addressForm, departmentForm, User.getUserById(session().get("email"))));
     }
 
@@ -72,13 +71,14 @@ public class HomeController extends Controller {
 
             newAddress = newAddressForm.get();
             newDepartment = newDepartmentForm.get();
-
+            e.setPassword(BCrypt.hashpw(e.getPassword(), BCrypt.gensalt()));
             e.save();
 
             List<Project> newProjects = new ArrayList<Project>();
             for(Long proj : e.getprojSelect()) {
                 newProjects.add(Project.find.byId(proj));
             }
+
 
             e.department = newDepartment;
             e.address = newAddress;
@@ -112,25 +112,25 @@ public class HomeController extends Controller {
         } catch (Exception ex) {
             return badRequest("error");
         }
-        return ok(updateEmployee.render(email, employeeForm, Employee.getUserById(session().get("email"))));
+        return ok(updateEmployee.render(email, employeeForm, User.getUserById(session().get("email"))));
     }
 
 
     public Result updateEmployeeSubmit(String email) {
         Form<Employee> updateEmployeeForm = formFactory.form(Employee.class).bindFromRequest();
         if (updateEmployeeForm.hasErrors()) {
-            return badRequest(updateEmployee.render(email, updateEmployeeForm, Employee.getUserById(session().get("email"))));
+            return badRequest(updateEmployee.render(email, updateEmployeeForm, User.getUserById(session().get("email"))));
         } else {
             Employee e = updateEmployeeForm.get();
 
             e.setEmail(email);
-
+            e.setPassword(BCrypt.hashpw(e.getPassword(), BCrypt.gensalt()));
             List<Project> newProjects = new ArrayList<Project>();
             for (Long proj : e.getprojSelect()) {
                 newProjects.add(Project.find.byId(proj));
             }
 
-            e.projects = newProjects;
+            e.setProjects(newProjects);
 
             e.update();
             MultipartFormData<File> data = request().body().asMultipartFormData();
@@ -352,6 +352,52 @@ public class HomeController extends Controller {
         List<Department> depList = Department.findAll();
         return ok(departments.render(depList, Employee.getUserById(session().get("email"))));
     }
+
+    @Security.Authenticated(Secured.class)
+    @With(AuthManager.class)
+    @Transactional
+    public Result deleteDepartment(Long id) {
+        Department.find.ref(id).delete();
+        flash("success", "Department has been deleted");
+
+        return redirect(routes.HomeController.departments());
+    }
+
+
+
+    @Security.Authenticated(Secured.class)
+    @With(AuthManager.class)
+    public Result updateDepartment(Long id) {
+        Department d;
+        Form<Department> departmentForm;
+
+        try {
+            d = Department.find.byId(id);
+            departmentForm = formFactory.form(Department.class).fill(d);
+            flash("success", "Department was updated");
+        } catch(Exception ex) {
+            return badRequest("error");
+        }
+        return ok(updateDepartment.render(id, departmentForm, User.getUserById(session().get("email"))));
+    }
+
+
+
+    @Security.Authenticated(Secured.class)
+    @With(AuthManager.class)
+    public Result updateDepartmentSubmit(Long id) {
+        Form<Department> newDepartmentForm = formFactory.form(Department.class).bindFromRequest();
+        if (newDepartmentForm.hasErrors()) {
+            return badRequest(updateDepartment.render(id, newDepartmentForm, User.getUserById(session().get("email"))));
+        } else {
+            Department d = newDepartmentForm.get();
+            d.setId(id);
+            d.update();
+        }
+        return redirect(controllers.routes.HomeController.departments());
+    }
+
+
 
 
 }

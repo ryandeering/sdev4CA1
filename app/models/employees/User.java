@@ -3,6 +3,7 @@ package models.employees;
 import java.util.*;
 import javax.persistence.*;
 import io.ebean.*;
+import org.mindrot.jbcrypt.BCrypt;
 import play.data.format.*;
 import play.data.validation.*;
 
@@ -36,7 +37,12 @@ public class User extends Model {
 
 
     public static User authenticate(String email, String password) {
-        return find.query().where().eq("email", email).eq("password", password).findUnique();
+        User user = User.find.query().where().eq("email", email).findUnique();
+        if (user != null && BCrypt.checkpw(password, user.getPassword())) {
+            return user;
+        } else {
+            return user;
+        }
     }
 
     public static User getEmployeeById(String id) {

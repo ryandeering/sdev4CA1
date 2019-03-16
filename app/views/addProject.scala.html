@@ -7,7 +7,7 @@
     @form(action=routes.HomeController.addProjectSubmit(), 'class -> "form-horizontal", 'role -> "form", 'enctype -> "multipart/form-data") {
     @CSRF.formField
 
-    @inputText(projectForm("name"), '_label -> "Name", 'class -> "form-control")
+    @inputText(projectForm("Pname"), '_label -> "Name", 'class -> "form-control")
 
     <div class="actions">
         <input type="submit" value="Add Project" class="btn btn-primary">

@@ -32,59 +32,47 @@ object employees extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.
 
 Seq[Any](format.raw/*2.1*/("""    """),_display_(/*2.6*/main("Employees",user)/*2.28*/{_display_(Seq[Any](format.raw/*2.29*/("""
         """),format.raw/*3.9*/("""<h1>Current customers</h1>
+        """),_display_(/*4.10*/if(flash.containsKey("success"))/*4.42*/ {_display_(Seq[Any](format.raw/*4.44*/("""
+            """),format.raw/*5.13*/("""<div class="alert alert-success">
+            """),_display_(/*6.14*/flash/*6.19*/.get("success")),format.raw/*6.34*/("""
+            """),format.raw/*7.13*/("""</div>
+        """)))}),format.raw/*8.10*/("""
 
-
-        """),format.raw/*6.75*/("""
-        """),_display_(/*7.10*/if(flash.containsKey("success"))/*7.42*/ {_display_(Seq[Any](format.raw/*7.44*/("""
-            """),format.raw/*8.13*/("""<div class="alert alert-success">
-            """),_display_(/*9.14*/flash/*9.19*/.get("success")),format.raw/*9.34*/("""
-            """),format.raw/*10.13*/("""</div>
-        """)))}),format.raw/*11.10*/("""
-
-        """),format.raw/*13.9*/("""<div class="col-sm-9">
+        """),format.raw/*10.9*/("""<div class="col-sm-9">
             <h4>Employees.</h4>
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
-                        <!-- The header row-->
                     <tr>
                         <th>Email</th>
                         <th>Role </th>
                         <th>Name </th>
-
-
                     </tr>
                 </thead>
                 <tbody>
-                        <!-- Product row(s) -->
 
-                    """),format.raw/*29.70*/("""
-                    """),_display_(/*30.22*/for(e<-employees) yield /*30.39*/ {_display_(Seq[Any](format.raw/*30.41*/("""
-                        """),format.raw/*31.25*/("""<tr>
-                            <td>"""),_display_(/*32.34*/e/*32.35*/.getEmail),format.raw/*32.44*/("""</td>
-                            <td>"""),_display_(/*33.34*/e/*33.35*/.getRole),format.raw/*33.43*/("""</td>
-                            <td>"""),_display_(/*34.34*/e/*34.35*/.getName),format.raw/*34.43*/("""</td>
+                    """),_display_(/*22.22*/for(e<-employees) yield /*22.39*/ {_display_(Seq[Any](format.raw/*22.41*/("""
+                        """),format.raw/*23.25*/("""<tr>
+                            <td>"""),_display_(/*24.34*/e/*24.35*/.getEmail),format.raw/*24.44*/("""</td>
+                            <td>"""),_display_(/*25.34*/e/*25.35*/.getRole),format.raw/*25.43*/("""</td>
+                            <td>"""),_display_(/*26.34*/e/*26.35*/.getName),format.raw/*26.43*/("""</td>
 
-
-                                <!-- Update button -->
                             <td>
-                                <a href=""""),_display_(/*39.43*/routes/*39.49*/.HomeController.employeesManager()),format.raw/*39.83*/("""" class="button-xs btn-danger">
+                                <a href=""""),_display_(/*29.43*/routes/*29.49*/.HomeController.employeesManager()),format.raw/*29.83*/("""" class="button-xs btn-danger">
                                     <span class="glyphicon glyphicon-pencil"></span>
-                                </a> <!--updateEmployee(e.getEmail)    deleteEmployee(e.getEmail)-->
+                                </a>
                             </td>
-                                <!-- Delete button -->
                             <td>
-                                <a href=""""),_display_(/*45.43*/routes/*45.49*/.HomeController.employeesManager()),format.raw/*45.83*/("""" class="button-xs btn-danger" onclick="return confirmDel();">
+                                <a href=""""),_display_(/*34.43*/routes/*34.49*/.HomeController.employeesManager()),format.raw/*34.83*/("""" class="button-xs btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </td>
                         </tr>
-                    """)))}),format.raw/*50.22*/("""
+                    """)))}),format.raw/*39.22*/("""
 
-                """),format.raw/*52.17*/("""</tbody>
+                """),format.raw/*41.17*/("""</tbody>
             </table>
-
             <p>
-                <a href=""""),_display_(/*56.27*/routes/*56.33*/.HomeController.addEmployee()),format.raw/*56.62*/("""">
+                <a href=""""),_display_(/*44.27*/routes/*44.33*/.HomeController.addEmployee()),format.raw/*44.62*/("""">
                     <button class="btn btn-primary">Add a new Customer</button>
                 </a>
             </p>
@@ -105,11 +93,11 @@ Seq[Any](format.raw/*2.1*/("""    """),_display_(/*2.6*/main("Employees",user)/*
 
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 15 12:24:44 GMT 2019
+                  DATE: Sat Mar 16 14:50:05 GMT 2019
                   SOURCE: /home/ryan/Documents/a/sdev4CA1/app/views/employees.scala.html
-                  HASH: 01cfd9cef6107351ab77527b3474ebed9c33988c
-                  MATRIX: 999->1|1166->75|1196->80|1226->102|1264->103|1299->112|1363->215|1399->225|1439->257|1478->259|1518->272|1591->319|1604->324|1639->339|1680->352|1727->368|1764->378|2283->918|2332->940|2365->957|2405->959|2458->984|2523->1022|2533->1023|2563->1032|2629->1071|2639->1072|2668->1080|2734->1119|2744->1120|2773->1128|2938->1266|2953->1272|3008->1306|3417->1688|3432->1694|3487->1728|3787->1997|3833->2015|3933->2088|3948->2094|3998->2123
-                  LINES: 28->1|33->2|33->2|33->2|33->2|34->3|37->6|38->7|38->7|38->7|39->8|40->9|40->9|40->9|41->10|42->11|44->13|60->29|61->30|61->30|61->30|62->31|63->32|63->32|63->32|64->33|64->33|64->33|65->34|65->34|65->34|70->39|70->39|70->39|76->45|76->45|76->45|81->50|83->52|87->56|87->56|87->56
+                  HASH: 6752bd66f3b1addbdaa2649a0635e6981b3bde74
+                  MATRIX: 999->1|1166->75|1196->80|1226->102|1264->103|1299->112|1361->148|1401->180|1440->182|1480->195|1553->242|1566->247|1601->262|1641->275|1687->291|1724->301|2146->696|2179->713|2219->715|2272->740|2337->778|2347->779|2377->788|2443->827|2453->828|2482->836|2548->875|2558->876|2587->884|2696->966|2711->972|2766->1006|3056->1269|3071->1275|3126->1309|3395->1547|3441->1565|3540->1637|3555->1643|3605->1672
+                  LINES: 28->1|33->2|33->2|33->2|33->2|34->3|35->4|35->4|35->4|36->5|37->6|37->6|37->6|38->7|39->8|41->10|53->22|53->22|53->22|54->23|55->24|55->24|55->24|56->25|56->25|56->25|57->26|57->26|57->26|60->29|60->29|60->29|65->34|65->34|65->34|70->39|72->41|75->44|75->44|75->44
                   -- GENERATED --
               */
           

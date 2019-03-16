@@ -11,6 +11,7 @@
             <tr>
                 <th>ID</th>
                 <th>Department</th>
+                <th colspan="2">Update/Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -18,8 +19,23 @@
                 <tr>
                     <td>@d.getId</td>
                     <td>@d.getName</td>
+                    <td>
+                        <a href="@routes.HomeController.updateDepartment(d.getId)" class="button xs btn-danger">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@routes.HomeController.deleteDepartment(d.getId)" class="button xs btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+
+
+    <a href="@routes.HomeController.addDepartment()">
+        <button class="btn btn-primary">Add a Department</button>
+    </a>
 }

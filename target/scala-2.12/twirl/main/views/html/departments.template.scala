@@ -42,18 +42,34 @@ Seq[Any](_display_(/*2.2*/main("Department", user)/*2.26*/{_display_(Seq[Any](fo
             <tr>
                 <th>ID</th>
                 <th>Department</th>
+                <th colspan="2">Update/Delete</th>
             </tr>
         </thead>
         <tbody>
-            """),_display_(/*17.14*/for(d<-department) yield /*17.32*/ {_display_(Seq[Any](format.raw/*17.34*/("""
-                """),format.raw/*18.17*/("""<tr>
-                    <td>"""),_display_(/*19.26*/d/*19.27*/.getId),format.raw/*19.33*/("""</td>
-                    <td>"""),_display_(/*20.26*/d/*20.27*/.getName),format.raw/*20.35*/("""</td>
+            """),_display_(/*18.14*/for(d<-department) yield /*18.32*/ {_display_(Seq[Any](format.raw/*18.34*/("""
+                """),format.raw/*19.17*/("""<tr>
+                    <td>"""),_display_(/*20.26*/d/*20.27*/.getId),format.raw/*20.33*/("""</td>
+                    <td>"""),_display_(/*21.26*/d/*21.27*/.getName),format.raw/*21.35*/("""</td>
+                    <td>
+                        <a href=""""),_display_(/*23.35*/routes/*23.41*/.HomeController.updateDepartment(d.getId)),format.raw/*23.82*/("""" class="button xs btn-danger">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href=""""),_display_(/*28.35*/routes/*28.41*/.HomeController.deleteDepartment(d.getId)),format.raw/*28.82*/("""" class="button xs btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
                 </tr>
-            """)))}),format.raw/*22.14*/("""
-        """),format.raw/*23.9*/("""</tbody>
+            """)))}),format.raw/*33.14*/("""
+        """),format.raw/*34.9*/("""</tbody>
     </table>
-""")))}),format.raw/*25.2*/("""
+
+
+    <a href=""""),_display_(/*38.15*/routes/*38.21*/.HomeController.addDepartment()),format.raw/*38.52*/("""">
+        <button class="btn btn-primary">Add a Department</button>
+    </a>
+""")))}),format.raw/*41.2*/("""
 """))
       }
     }
@@ -70,11 +86,11 @@ Seq[Any](_display_(/*2.2*/main("Department", user)/*2.26*/{_display_(Seq[Any](fo
 
               /*
                   -- GENERATED --
-                  DATE: Fri Mar 15 12:24:44 GMT 2019
+                  DATE: Sat Mar 16 15:10:38 GMT 2019
                   SOURCE: /home/ryan/Documents/a/sdev4CA1/app/views/departments.scala.html
-                  HASH: 14cb2bf7a33b0e9a23eaeb9e894a23cefa17ef1e
-                  MATRIX: 1002->1|1171->78|1203->102|1241->103|1272->108|1338->149|1378->181|1416->182|1451->191|1520->234|1533->239|1568->254|1603->263|1644->275|1675->280|1928->506|1962->524|2002->526|2047->543|2104->573|2114->574|2141->580|2199->611|2209->612|2238->620|2310->661|2346->670|2399->693
-                  LINES: 28->1|33->2|33->2|33->2|34->3|35->4|35->4|35->4|36->5|37->6|37->6|37->6|38->7|39->8|40->9|48->17|48->17|48->17|49->18|50->19|50->19|50->19|51->20|51->20|51->20|53->22|54->23|56->25
+                  HASH: 9718bfeb6069d41ca7fc206794eb3b56debc6d0a
+                  MATRIX: 1002->1|1171->78|1203->102|1241->103|1272->108|1338->149|1378->181|1416->182|1451->191|1520->234|1533->239|1568->254|1603->263|1644->275|1675->280|1979->557|2013->575|2053->577|2098->594|2155->624|2165->625|2192->631|2250->662|2260->663|2289->671|2381->736|2396->742|2458->783|2708->1006|2723->1012|2785->1053|3014->1251|3050->1260|3115->1298|3130->1304|3182->1335|3291->1414
+                  LINES: 28->1|33->2|33->2|33->2|34->3|35->4|35->4|35->4|36->5|37->6|37->6|37->6|38->7|39->8|40->9|49->18|49->18|49->18|50->19|51->20|51->20|51->20|52->21|52->21|52->21|54->23|54->23|54->23|59->28|59->28|59->28|64->33|65->34|69->38|69->38|69->38|72->41
                   -- GENERATED --
               */
           

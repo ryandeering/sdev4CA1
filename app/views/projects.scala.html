@@ -15,8 +15,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Description</th>
-                        <th>Due Date</th>
                         <th colspan="2">Update/Delete</th>
                     </tr>
                 </thead>
@@ -33,7 +31,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="@routes.HomeController.deleteProject(p.getId)" class="button xs btn-danger" onclick="return confirmDel();">
+                            <a href="@routes.HomeController.deleteProject(p.getId)" class="button xs btn-danger">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </a>
                         </td>

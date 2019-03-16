@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/ryan/Documents/a/sdev4CA1/conf/routes
-// @DATE:Fri Mar 15 12:24:44 GMT 2019
+// @DATE:Sat Mar 16 15:06:08 GMT 2019
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -59,12 +59,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:43
+    // @LINE:47
     def addProject: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addProject",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/addProject"})
+        }
+      """
+    )
+  
+    // @LINE:43
+    def updateDepartment: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateDepartment",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/updateDepartment/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
@@ -79,7 +89,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:47
+    // @LINE:51
     def deleteProject: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteProject",
       """
@@ -89,7 +99,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:46
+    // @LINE:44
+    def updateDepartmentSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.updateDepartmentSubmit",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/updateDepartmentSubmit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:50
     def updateProjectSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateProjectSubmit",
       """
@@ -99,7 +119,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:49
     def updateProject: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateProject",
       """
@@ -145,6 +165,16 @@ package controllers.javascript {
       """
         function(email0) {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "updateEmployeeSubmit/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("email", email0)) + "/"})
+        }
+      """
+    )
+  
+    // @LINE:42
+    def deleteDepartment: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.deleteDepartment",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "manager/deleteDepartment/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
         }
       """
     )
@@ -199,7 +229,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:44
+    // @LINE:48
     def addProjectSubmit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addProjectSubmit",
       """

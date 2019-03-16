@@ -28,7 +28,6 @@
             '_showConstraints -> false, 'class -> "form-control"
         )
 
-
         @inputText(employeeForm("name"), '_label -> "name", 'class -> "form-control")
 
         @inputText(employeeForm("role").copy(value=Some("employee")), '_label -> "",'hidden -> "hidden")
@@ -39,9 +38,6 @@
         @for((value, name) <- Project.options) {
             <input type="checkbox" name="projSelect[]" value="@value"/>@name<br>
         }
-
-
-
 
 
 

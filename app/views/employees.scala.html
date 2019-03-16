@@ -1,9 +1,6 @@
 @(employees: List[models.employees.Employee] ,user: models.employees.User)
     @main("Employees",user){
         <h1>Current customers</h1>
-
-
-        @* Display successful new user message from flash, if it is set *@
         @if(flash.containsKey("success")) {
             <div class="alert alert-success">
             @flash.get("success")
@@ -14,35 +11,27 @@
             <h4>Employees.</h4>
             <table class="table table-bordered table-hover table-condensed">
                 <thead>
-                        <!-- The header row-->
                     <tr>
                         <th>Email</th>
                         <th>Role </th>
                         <th>Name </th>
-
-
                     </tr>
                 </thead>
                 <tbody>
-                        <!-- Product row(s) -->
 
-                    @* Loop for creating table rows from User data *@
                     @for(e<-employees) {
                         <tr>
                             <td>@e.getEmail</td>
                             <td>@e.getRole</td>
                             <td>@e.getName</td>
 
-
-                                <!-- Update button -->
                             <td>
                                 <a href="@routes.HomeController.employeesManager()" class="button-xs btn-danger">
                                     <span class="glyphicon glyphicon-pencil"></span>
-                                </a> <!--updateEmployee(e.getEmail)    deleteEmployee(e.getEmail)-->
+                                </a>
                             </td>
-                                <!-- Delete button -->
                             <td>
-                                <a href="@routes.HomeController.employeesManager()" class="button-xs btn-danger" onclick="return confirmDel();">
+                                <a href="@routes.HomeController.employeesManager()" class="button-xs btn-danger">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </a>
                             </td>
@@ -51,7 +40,6 @@
 
                 </tbody>
             </table>
-
             <p>
                 <a href="@routes.HomeController.addEmployee()">
                     <button class="btn btn-primary">Add a new Customer</button>

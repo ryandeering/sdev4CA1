@@ -1,8 +1,11 @@
 @(email: String, updateEmployeeForm: Form[models.employees.Employee], user: models.employees.User)
 @import helper._
-@import models.entities.Project
-@import models.entities.Department
 
+@import models.employees.Employee
+@import models.employees.User
+@import models.entities.Project;
+@import models.entities.Address;
+@import models.entities.Department;
 
 
 
@@ -11,7 +14,7 @@
     @form(action=routes.HomeController.updateEmployeeSubmit(email), 'class -> "form-horizontal", 'role -> "form", 'enctype -> "multipart/form-data") {
         @CSRF.formField
         @inputText(updateEmployeeForm("email"), '_label -> "Email", 'class -> "form-control")
-        @inputText(updateEmployeeForm("password"), '_label -> "Password", 'class -> "form-control")
+        @inputPassword(updateEmployeeForm("password"), '_label -> "Password", 'class -> "form-control")
         @inputText(updateEmployeeForm("name"), '_label -> "Name", 'class -> "form-control")
         @inputText(updateEmployeeForm("address.address"), '_label -> "Address", 'class -> "form-control")
         @select(updateEmployeeForm("department.id"), options(Department.options), '_label -> "Department", '_default -> "-- Choose a department --", '_showConstraints -> false, 'class -> "form-control")

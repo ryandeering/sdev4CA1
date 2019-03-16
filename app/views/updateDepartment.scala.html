@@ -1,0 +1,20 @@
+@(id: Long, departmentForm: Form[models.entities.Department], user: models.employees.User)
+@import helper._
+
+@main("Update Project", user) {
+    <div class="col-sm-3">
+        <p class="lead">Update project</p>
+        @form(action=routes.HomeController.updateDepartmentSubmit(id), 'class -> "form-horizontal", 'role -> "form", 'enctype -> "multipart/form-data") {
+            @CSRF.formField
+
+            @inputText(departmentForm("name"), '_label -> "Name", 'class -> "form-control")
+
+            <div class="actions">
+                <input type="submit" value="Update Department" class="btn btn-primary">
+                <a href="@routes.HomeController.departments()">
+                    <button type="button" class="btn btn-warning">Cancel</button>
+                </a>
+            </div>
+        </div>
+}
+}

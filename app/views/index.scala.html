@@ -10,6 +10,7 @@
                 <a href="@routes.HomeController.index(0)" class="list-group-item">All Departments</a>
                 @for(d <- departments) {
                     <a href="@routes.HomeController.index(d.getId)" class="list-group-item">@d.getName
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="badge">@d.getEmployees.size()</span>
                     </a>
                 }
@@ -25,11 +26,14 @@
                 <thead>
                     <tr>
                         <th>Image</th>
-                        <th>Email</th>
+                        @if(user.getRole == "manager") {
+                            <th>Email</th>
+                        }
                         <th>Name</th>
-                        <th>Address</th>
+                        @if(user.getRole == "manager") {
+                            <th>Address</th>
+                        }
                         <th>Department</th>
-
                         @if(user.getRole == "manager") {
                             <th colspan="2"> Update/ Delete</th>
                         }
@@ -44,7 +48,10 @@
                         } else {
                             <td><img src="/assets/images/employeeImages/thumbnails/noImage.png"></td>
                         }
-                    <td>@e.getEmail</td>
+                        @if(user.getRole == "manager") {
+                            <td>@e.getEmail</td>
+                        }
+
                     <td>
                         @if(user.getEmail == e.getEmail) {
                             <a href="@routes.HomeController.employeeProjects(e.getEmail)">@e.getName</a>
@@ -54,7 +61,10 @@
                         @e.getName
                         }
                     </td>
-                    <td>@e.getAddress.getAddress()</td>
+                        @if(user.getRole == "manager") {
+                            <td>@e.getAddress.getAddress()</td>
+                        }
+
                     <td>@e.getDepartment.getName()</td>
 
                         @if(user.getRole == "manager") {
@@ -74,9 +84,11 @@
                 </tbody>
             </table>
             <div>
-                <a href="@routes.HomeController.addEmployee()">
-                    <button class="btn btn-primary">Add an employee</button>
-                </a>
+                @if(user.getRole == "manager") {
+                    <a href="@routes.HomeController.addEmployee()">
+                        <button class="btn btn-primary">Add an employee</button>
+                    </a>
+                }
             </div>
         </div>
     </div>

@@ -1,0 +1,3 @@
+[error] /home/ryan/Documents/a/sdev4CA1/app/controllers/HomeController.java:390:1: incompatible types: play.data.Form<models.entities.Department> cannot be converted to play.data.Form<models.entities.Project>
+[error]             return badRequest(updateProject.render(id, newDepartmentForm, User.getUserById(session().get("email"))));
+[info] Some messages have been simplified; recompile with -Xdiags:verbose to get full output

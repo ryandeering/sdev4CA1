@@ -39,6 +39,10 @@ GET     /employeeProjects           controllers.HomeController.employeeProjects(
 
 GET     /manager/addDepartment              controllers.HomeController.addDepartment
 POST    /manager/addDepartmentSubmit        controllers.HomeController.addDepartmentSubmit
+GET     /manager/deleteDepartment/:id           controllers.HomeController.deleteDepartment(id: Long)
+GET     /manager/updateDepartment/:id          controllers.HomeController.updateDepartment(id: Long)
+POST    /manager/updateDepartmentSubmit/:id    controllers.HomeController.updateDepartmentSubmit(id: Long)
+
 
 GET     /manager/addProject                 controllers.HomeController.addProject
 POST    /manager/addProjectSubmit           controllers.HomeController.addProjectSubmit
